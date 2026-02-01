@@ -4,17 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim Rothämel</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+
+  <script type="module" src="/src/pages/index.js" ></script>
 </head>
 <body>
-  
+  <nav>
+    <element class="language-switch">
+      <a onclick="window.changeLanguage('de')">DE</a> 
+      <a onclick="window.changeLanguage('en')">EN</a>
+    </element>
+    <div class="theme-switch">
+      <button><img src="/public/assets/svg/dark_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.png" alt="Darkmode Button"></button>
+      <button><img src="/public/assets/svg/light_mode_24dp_333333_FILL0_wght400_GRAD0_opsz24.png" alt="Lightmode Button" ></button>
+    </div>
+  </nav>
 <main>
   <div class="myinfo">
-  <p>My name is</p>
-  <h1>Tim Rothämel</h1>
-  <h2>I like to code in my freetime</h2>
-  <p>I'm a teenager who loves coding. I often write HTML, CSS and JavaScript Code sometimes with frameworks like React or Angular. I like to build my own little projects and get better in coding every day.</p>
-  </div>
+<h1 data-i18n="hero_title"></h1>
+<p data-i18n="hero_sub"></p>
+</div>
 </main>
 
 </body>
