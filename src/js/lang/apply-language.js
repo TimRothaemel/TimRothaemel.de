@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem("lang") || "de";
+let currentLang = localStorage.getItem("lang") || "en"; // Default to English
 
 export async function loadLang(lang) {
   const res = await fetch(`/lang/${lang}.json`);
