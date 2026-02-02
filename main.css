@@ -1,11 +1,308 @@
-:root{
-    --background-color: d2cdcd;
-}
-body{
-    background-color: var(--background-color);
-}   
-.myinfo{
-    border-color: red;
-    border: solid 2px;
+/* ========================================
+   CSS Reset & Base Styles
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  /* Light Mode Colors (Default) */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+body.darkmode {
+  /* Dark Mode Colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --border-color: #334155;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed) ease,
+              color var(--transition-speed) ease;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ========================================
+   Canvas Background
+   ======================================== */
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+body.darkmode #bg {
+  opacity: 0.3;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 3rem;
+  background: var(--bg-secondary);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Language Switch */
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-primary);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.language-switch a {
+  padding: 0.4rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.language-switch a:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.language-switch a.active {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Theme Switch */
+.theme-switch {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-primary);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.theme-switch button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.theme-switch button:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.theme-switch button img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform var(--transition-speed) ease;
+}
+
+.theme-switch button:hover img {
+  transform: rotate(20deg);
+}
+
+/* Hide appropriate theme button based on current theme */
+body.darkmode .theme-switch button:has(.dark-icon) {
+  display: none;
+}
+
+body:not(.darkmode) .theme-switch button:has(.light-icon) {
+  display: none;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.myinfo {
+  max-width: 800px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+.myinfo h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.myinfo p {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .language-switch,
+  .theme-switch {
+    padding: 0.4rem;
+  }
+
+  .language-switch a {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .theme-switch button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .myinfo h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .myinfo {
+    padding: 0 1rem;
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
