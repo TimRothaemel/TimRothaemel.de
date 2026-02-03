@@ -1,8 +1,8 @@
-import { loadLang } from "../js/lang/apply-language.js";
-import { changeLanguage } from "../js/lang/change-language.js";
-import { loadTheme } from "../js/theme/apply-theme.js";
-import { changeTheme } from "../js/theme/change-theme.js";
-import { draw } from "../js/styles/particles.js";
+import { loadLang } from "../../js/lang/apply-language.js";
+import { changeLanguage } from "../../js/lang/change-language.js";
+import { loadTheme } from "../../js/theme/apply-theme.js";
+import { changeTheme } from "../../js/theme/change-theme.js";
+import { draw } from "../../components/particles/particles.js";
 
 // Start the particle animation
 draw();
