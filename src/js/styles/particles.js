@@ -21,12 +21,20 @@ for (let i = 0; i < FLAKES; i++) {
   });
 }
 
-function draw() {
+export function draw() {
     ctx.fillStyle = "red";
 ctx.fillRect(10,10,50,50);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "rgba(255,255,255,0.8)";
+
+
+  let currentLang = localStorage.getItem("theme") || "dark";
+  if (currentLang === "dark") {
+    ctx.fillStyle = "#f8f9fa"; // Light color for dark mode
+  } else {
+    ctx.fillStyle = "#0f172a"; // Dark color for light mode
+  }
+
 
   for (let f of flakes) {
     ctx.beginPath();
@@ -43,4 +51,3 @@ ctx.fillRect(10,10,50,50);
   requestAnimationFrame(draw);
 }
 
-draw();

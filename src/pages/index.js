@@ -2,6 +2,12 @@ import { loadLang } from "../js/lang/apply-language.js";
 import { changeLanguage } from "../js/lang/change-language.js";
 import { loadTheme } from "../js/theme/apply-theme.js";
 import { changeTheme } from "../js/theme/change-theme.js";
+import { draw } from "../js/styles/particles.js";
+
+// Start the particle animation
+draw();
+
+// Make functions available globally for onclick handlers in HTML
 
 window.changeLanguage = changeLanguage;  // Expose to global scope (inde.html onclick)
 window.changeTheme = changeTheme;      // Expose to global scope (inde.html onclick)
