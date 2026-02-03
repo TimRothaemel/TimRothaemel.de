@@ -32,7 +32,7 @@ ctx.fillRect(10,10,50,50);
   if (currentLang === "dark") {
     ctx.fillStyle = "#f8f9fa"; // Light color for dark mode
   } else {
-    ctx.fillStyle = "#0f172a"; // Dark color for light mode
+    ctx.fillStyle = "#485470"; // Dark color for light mode
   }
 
 
