@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio website of Tim Rothämel, showcasing projects and skills in web development.">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Tim Rothämel, Portfolio, Developer, Programmer, Software Engineer, Projects">
+  <meta name="author" content="Tim Rothämel">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim Rothämel</title>
   <link rel="stylesheet" href="main.css">
 
   <script type="module" src="/src/pages/index.js" ></script>
+  <script type="module" src="/src/components/header/header-loader.js"></script>
 </head>
 <body>
+  <header class="header"></header>
   <canvas id="bg"></canvas>
-  <nav>
-    <element class="language-switch">
-      <a onclick="window.changeLanguage('de')">DE</a> 
-      <a onclick="window.changeLanguage('en')">EN</a>
-    </element>
-    <div class="theme-switch">
-      <button onclick="window.changeTheme('dark')" ><img class="dark-icon" src="/public/assets/svg/light-mode.svg" alt="Darkmode Button"></button>
-      <button onclick="window.changeTheme('light')"><img class="light-icon" src="/public/assets/svg/dark-mode.svg" alt="Lightmode Button" ></button>
-    </div>
-  </nav>
 <main>
   <div class="myinfo">
 <h1 data-i18n="hero_title"></h1>
 <p data-i18n="hero_sub"></p>
 </div>
 </main>
-<script src="/src/js/styles/particles.js"></script>
+<script type="module" src="/src/js/styles/particles.js"></script>
 </body>
 </html>

@@ -14,9 +14,9 @@ const FLAKES = 120;
 
 for (let i = 0; i < FLAKES; i++) {
   flakes.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
+    x: Math.random() * canvas.width,  // Start at random x position
+    y: Math.random() * canvas.height, // Start at random y position
+    r: Math.random() * 2 + 1, // Radius between 1 and 3
     speed: Math.random() * 1 + 0.3,
   });
 }
