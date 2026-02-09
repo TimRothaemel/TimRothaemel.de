@@ -1,0 +1,47 @@
+/* Animation Container & Cursor */
+.animation-wrapper {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2em;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+#animation-container {
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: color var(--transition-speed) ease;
+  white-space: nowrap;
+}
+
+.cursor {
+  animation: blink 0.7s infinite;
+  font-weight: 400;
+  margin-left: 2px;
+  color: var(--accent-color);
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .animation-wrapper {
+    min-height: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .animation-wrapper {
+    min-height: 1.6em;
+  }
+}
