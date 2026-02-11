@@ -43,34 +43,6 @@ nav {
   justify-self: end; /* rechtsbündig in der dritten Spalte */
 }
 
-/* ─── menu-btn — nur unter 768px sichtbar ──────────────────── */
-.menu-btn {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  padding: 0.4rem;
-  cursor: pointer;
-  border-radius: 6px;
-  color: var(--text-primary);
-  flex-shrink: 0;
-  transition: background var(--transition-speed) ease;
-}
-
-.menu-btn:hover {
-  background: var(--bg-primary);
-}
-
-.menu-btn .line {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
-
-.menu-btn.open .line-1 { transform: translateY(6px) rotate(45deg); }
-.menu-btn.open .line-2 { opacity: 0; transform: scaleX(0); }
-.menu-btn.open .line-3 { transform: translateY(-6px) rotate(-45deg); }
-
 /* ─── NAV LINK Styles ───────────────────────────────────────── */
 .nav-link {
   padding: 0.4rem 0.85rem;
@@ -109,7 +81,11 @@ nav {
 }
 
 /* ─── Language + Theme Buttons ──────────────────────────────── */
-.language-switch button {
+.menu-btn {
+  display: none; /* Nur auf Mobile sichtbar */
+}
+.language-switch button,
+.menu-btn button {
   padding: 0.3rem 0.8rem;
   background: transparent;
   border: none;
@@ -122,7 +98,9 @@ nav {
 }
 
 .language-switch button:hover,
-.language-switch button.active {
+.language-switch button.active,
+.menu-btn button:hover,
+.menu-btn button.active {
   background: var(--accent-color);
   color: white;
 }
@@ -132,7 +110,8 @@ nav {
   gap: 0.25rem;
 }
 
-.theme-switch button {
+.theme-switch button,
+.menu-btn button {
   background: transparent;
   border: none;
   padding: 0.4rem;
@@ -144,12 +123,14 @@ nav {
   transition: all var(--transition-speed) ease;
 }
 
-.theme-switch button:hover {
+.theme-switch button,
+.menu-btn button:hover {
   background: var(--bg-primary);
   transform: translateY(-2px);
 }
 
-.theme-switch button img {
+.theme-switch button img,
+.menu-btn button img {
   width: 22px;
   height: 22px;
   display: block;
@@ -160,8 +141,18 @@ nav {
   transform: rotate(20deg);
 }
 
-body.darkmode .theme-switch button:has(.dark-icon)        { display: none; }
-body:not(.darkmode) .theme-switch button:has(.light-icon) { display: none; }
+body.darkmode .theme-switch button:has(.dark-icon) {
+  display: none;
+}
+body:not(.darkmode) .theme-switch button:has(.light-icon) {
+  display: none;
+}
+body.darkmode .menu-btn button:has(.dark-icon) {
+  display: none;
+}
+body:not(.darkmode) .menu-btn button:has(.light-icon) {
+  display: none;
+}
 
 /* ─── RESPONSIVE: Tablet (≤ 1024px) ────────────────────────── */
 @media (max-width: 1024px) {
@@ -184,6 +175,7 @@ body:not(.darkmode) .theme-switch button:has(.light-icon) { display: none; }
 
   .menu-btn {
     display: flex;
+    gap: 0.25rem;
   }
 
   /* Language Switch im Overlay verstecken, gehört zu Controls */
@@ -206,7 +198,9 @@ body:not(.darkmode) .theme-switch button:has(.light-icon) { display: none; }
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
     z-index: 999;
   }
 
@@ -235,7 +229,8 @@ body:not(.darkmode) .theme-switch button:has(.light-icon) { display: none; }
     font-size: 0.8rem;
   }
 
-  .theme-switch button img {
+  .theme-switch button img,
+  .menu-btn button img {
     width: 18px;
     height: 18px;
   }
