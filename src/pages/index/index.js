@@ -9,14 +9,16 @@ draw();
 
 // Make functions available globally for onclick handlers in HTML
 
-window.changeLanguage = changeLanguage;  // Expose to global scope (inde.html onclick)
-window.changeTheme = changeTheme;      // Expose to global scope (inde.html onclick)
+window.changeLanguage = changeLanguage; // Expose to global scope (inde.html onclick)
+window.changeTheme = changeTheme; // Expose to global scope (inde.html onclick)
 
-// Load saved theme or default to dark
-let currentTheme = localStorage.getItem("theme") || "dark";
-loadTheme(currentTheme);
+document.addEventListener("headerLoaded", function () {// Wait for header to load before applying theme and language
+  // Load saved theme or default to dark
+  let currentTheme = localStorage.getItem("theme") || "dark";
+  loadTheme(currentTheme);
 
-// Load saved language or default to German
+  // Load saved language or default to German
 
-let currentLang = localStorage.getItem("lang") || "de";
-loadLang(currentLang);
+  let currentLang = localStorage.getItem("lang") || "de";
+  loadLang(currentLang);
+});

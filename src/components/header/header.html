@@ -1,38 +1,68 @@
-<header>
 <nav>
-  <!-- Language Switch — ganz links -->
   <div class="language-switch">
     <button onclick="window.changeLanguage('de')">DE</button>
     <button onclick="window.changeLanguage('en')">EN</button>
   </div>
 
-  <!-- Nav Links — mittig -->
   <div class="nav-links" id="nav-links">
-    <a href="/home"     class="nav-link" data-i18n="home"></a>
-    <a href="/about"    class="nav-link" data-i18n="about"></a>
-    <a href="/contact"  class="nav-link" data-i18n="contact"></a>
+    <a href="/home" class="nav-link" data-i18n="home"></a>
+    <a href="/about" class="nav-link" data-i18n="about"></a>
+    <a href="/contact" class="nav-link" data-i18n="contact"></a>
     <a href="/projects" class="nav-link" data-i18n="projects"></a>
-    <a href="/skills"   class="nav-link" data-i18n="skills"></a>
-    <a href="/cv"       class="nav-link cv-link" data-i18n="cv"></a>
+    <a href="/skills" class="nav-link" data-i18n="skills"></a>
+    <a href="/cv" class="nav-link cv-link" data-i18n="cv"></a>
   </div>
 
-  <!-- Controls — rechts (nur Theme + Burger) -->
   <div class="nav-controls">
     <div class="theme-switch">
       <button onclick="window.changeTheme('dark')" aria-label="Darkmode">
-        <img class="dark-icon" src="/public/assets/svg/light-mode.svg" alt="Darkmode" />
+        <img
+          class="dark-icon"
+          src="/public/assets/svg/light-mode.svg"
+          alt="Darkmode"
+        />
       </button>
       <button onclick="window.changeTheme('light')" aria-label="Lightmode">
-        <img class="light-icon" src="/public/assets/svg/dark-mode.svg" alt="Lightmode" />
+        <img
+          class="light-icon"
+          src="/public/assets/svg/dark-mode.svg"
+          alt="Lightmode"
+        />
       </button>
     </div>
     <button class="menu-btn" id="menu-btn" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <line class="line line-1" x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line class="line line-2" x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line class="line line-3" x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line
+          class="line line-1"
+          x1="3"
+          y1="6"
+          x2="21"
+          y2="6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          class="line line-2"
+          x1="3"
+          y1="12"
+          x2="21"
+          y2="12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          class="line line-3"
+          x1="3"
+          y1="18"
+          x2="21"
+          y2="18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
       </svg>
     </button>
   </div>
 </nav>
-</header>
