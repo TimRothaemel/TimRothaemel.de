@@ -7,7 +7,7 @@ let currentWordIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
 
-function animateWords() {
+export function animateWords() {
   const container = document.getElementById("animation-container");
   const currentWord = words[currentWordIndex];
 
@@ -37,7 +37,3 @@ function animateWords() {
   const speed = isDeleting ? 75 : 120;
   setTimeout(animateWords, speed);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  animateWords();
-});

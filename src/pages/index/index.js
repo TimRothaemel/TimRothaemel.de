@@ -3,6 +3,7 @@ import { changeLanguage } from "../../js/lang/change-language.js";
 import { loadTheme } from "../../js/theme/apply-theme.js";
 import { changeTheme } from "../../js/theme/change-theme.js";
 import { draw } from "../../components/particles/particles.js";
+import { animateWords } from "../../components/write-animation/write-animation.js";
 
 // Start the particle animation
 draw();
@@ -21,4 +22,8 @@ document.addEventListener("headerLoaded", function () {// Wait for header to loa
 
   let currentLang = localStorage.getItem("lang") || "de";
   loadLang(currentLang);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  animateWords();
 });
