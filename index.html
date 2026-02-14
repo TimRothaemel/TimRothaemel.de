@@ -1,38 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta charset="UTF-8">
-  <meta name="description" content="Portfolio website of Tim Rothämel, showcasing projects and skills in web development.">
-  <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Tim Rothämel, Portfolio, Developer, Programmer, Software Engineer, Projects">
-  <meta name="author" content="Tim Rothämel">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tim Rothämel</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portfolio website of Tim Rothämel, showcasing projects and skills in web development."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Web Development, Tim Rothämel, Portfolio, Developer, Programmer, Software Engineer, Projects"
+    />
+    <meta name="author" content="Tim Rothämel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="eoR7MdoBEQ865nfVMie3cIhxzS4XmMkWtEqKHdgXSYM"
+    />
+    <title>Tim Rothämel</title>
 
-<meta name="google-site-verification" content="eoR7MdoBEQ865nfVMie3cIhxzS4XmMkWtEqKHdgXSYM" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="src/components/header/header.css" />
+    <link rel="stylesheet" href="src/pages/index/index.css" />
+    <link rel="stylesheet" href="src/components/particles/particles.css" />
+    <link
+      rel="stylesheet"
+      href="src/components/write-animation/write-animation.css"
+    />
 
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="src/components/header/header.css">
-  <link rel="stylesheet" href="src/pages/index/index.css">
-  <link rel="stylesheet" href="src/components/particles/particles.css">
-  <link rel="stylesheet" href="src/components/write-animation/write-animation.css">
-
-  <script type="module" src="/src/pages/index/index.js" ></script>
-  <script type="module" src="/src/components/header/header-loader.js"></script>
-  <script type="module" src="/src/components/write-animation/write-animation.js"></script>
-</head>
-<body>
-  <header class="header"></header>
-  <canvas id="bg"></canvas>
-<main>
-<div class="myinfo">
-  <h1 data-i18n="hero_title"></h1>
-  <p data-i18n="hero_sub"></p>
-  <div class="animation-wrapper">
-    <div id="animation-container"></div><span class="cursor">|</span>
-  </div>
-</div>
-</main>
-<script type="module" src="/src/components/particles/particles.js"></script>
-</body>
+    <script type="module" src="/src/pages/index/index.js"></script>
+    <script
+      type="module"
+      src="/src/components/header/header-loader.js"
+    ></script>
+    <script
+      type="module"
+      src="/src/components/write-animation/write-animation.js"
+    ></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <canvas id="bg"></canvas>
+    <main>
+      <div class="myinfo">
+        <h1 data-i18n="hero_title"></h1>
+        <p data-i18n="hero_sub"></p>
+        <div class="animation-wrapper">
+          <div id="animation-container"></div>
+          <span class="cursor">|</span>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/components/particles/particles.js"></script>
+  </body>
 </html>
