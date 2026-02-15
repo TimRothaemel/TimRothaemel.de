@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": {
+        "de": "TuningHub",
+        "en": "TuningHub"
+      },
+      "description": {
+        "de": "TuningHub ist eine Plattform zum An- und Verkaufen von Mopedteilen",
+        "en": "TuningHub is a platform for buying and selling moped parts"
+      },
+      "image": "images/project1.jpg",
+      "technologies": ["HTML", "CSS", "JavaScript","Supabase"],
+      "role": {
+        "de": "Full-Stack Entwickler",
+        "en": "Full-Stack Developer"
+      },
+      "duration": {
+        "de": "Januar 2023 - Juni 2023",
+        "en": "January 2023 - June 2023"
+      },
+      "users": "500+",
+      "status": {
+        "de": "offline",
+        "en": "offline"
+      },
+      "githubUrl": "https://github.com/username/project1",
+      "liveUrl": "https://project1.example.com",
+      "detailsUrl": "project-details.html?id=1"
+    }
+ ]
+}
