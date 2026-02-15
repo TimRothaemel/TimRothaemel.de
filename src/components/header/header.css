@@ -64,20 +64,16 @@ nav {
   background: var(--bg-primary);
 }
 
-.cv-link {
+.active-btn {
   background: var(--accent-color);
   color: white !important;
   padding: 0.4rem 1rem;
 }
 
-.cv-link:hover {
+.active-btn:hover {
   opacity: 0.85;
   background: var(--accent-color) !important;
   transform: translateY(-2px);
-}
-
-.cv-link.active {
-  opacity: 0.85;
 }
 
 /* ─── Language + Theme Buttons ──────────────────────────────── */

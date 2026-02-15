@@ -22,6 +22,10 @@ document.addEventListener("headerLoaded", function () {// Wait for header to loa
 
   let currentLang = localStorage.getItem("lang") || "de";
   loadLang(currentLang);
+
+  let currentSide = document.getElementById("home-btn");
+  currentSide.classList.add("active-btn");
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {
