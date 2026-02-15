@@ -23,7 +23,7 @@ document.addEventListener("headerLoaded", function () {// Wait for header to loa
   let currentLang = localStorage.getItem("lang") || "de";
   loadLang(currentLang);
 
-  let currentSide = document.getElementById("home-btn");
+  let currentSide = document.getElementById("home-btn");// Highlight the current page in the header
   currentSide.classList.add("active-btn");
 
 });
