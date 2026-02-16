@@ -61,26 +61,29 @@ function createProjectCard(project) {
     }
   });
 
-  card.innerHTML = `
-        <img src="${project.image}" alt="${project.title[currentLanguage]}">
-        <div class="informations">
-            <div class="main-informations">
-                <h3>${project.title[currentLanguage]}</h3>
-                <p>${project.description[currentLanguage]}</p>
-            </div>
-            <div class="project-links">
-                <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">${t("github")}</a>
-                <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
-            </div>
-            <div class="more-informations">
-                <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>
-                <p><strong>${t("role")}:</strong> ${project.role[currentLanguage]}</p>
-                <p><strong>${t("duration")}:</strong> ${project.duration[currentLanguage]}</p>
-                <p><strong>${t("users")}:</strong> ${project.users}</p>
-                <p><strong>${t("status")}:</strong> <span class="status ${project.status[currentLanguage].toLowerCase()}">${project.status[currentLanguage]}</span></p>
-            </div>
+card.innerHTML = `
+    <img src="${project.image}" alt="${project.title[currentLanguage]}">
+    <div class="informations">
+        <div class="main-informations">
+            <h3>${project.title[currentLanguage]}</h3>
+            <p>${project.description[currentLanguage]}</p>
         </div>
-    `;
+        <div class="project-links">
+            <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">
+                <img src="/public/assets/svg/dark-github.svg" alt="GitHub" class="light-icon">
+                <img src="/public/assets/svg/light-github.svg" alt="GitHub" class="dark-icon">
+            </a>
+            <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
+        </div>
+        <div class="more-informations">
+            <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>
+            <p><strong>${t("role")}:</strong> ${project.role[currentLanguage]}</p>
+            <p><strong>${t("duration")}:</strong> ${project.duration[currentLanguage]}</p>
+            <p><strong>${t("users")}:</strong> ${project.users}</p>
+            <p><strong>${t("status")}:</strong> <span class="status ${project.status[currentLanguage].toLowerCase()}">${project.status[currentLanguage]}</span></p>
+        </div>
+    </div>
+`;
 
   return card;
 }
