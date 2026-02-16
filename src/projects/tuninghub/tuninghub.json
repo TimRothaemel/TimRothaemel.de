@@ -10,7 +10,7 @@
         "de": "TuningHub ist eine Plattform zum An- und Verkaufen von Mopedteilen",
         "en": "TuningHub is a platform for buying and selling moped parts"
       },
-      "image": "images/project1.jpg",
+      "image": "/src/projects/tuninghub/img/tuninghub-main.png",
       "technologies": ["HTML", "CSS", "JavaScript","Supabase"],
       "role": {
         "de": "Full-Stack Entwickler",
