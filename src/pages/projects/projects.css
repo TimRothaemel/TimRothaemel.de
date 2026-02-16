@@ -1,0 +1,235 @@
+/* Projects Container */
+#projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: 
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Project Image */
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Informations Container */
+.project-card .informations {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+/* Main Informations */
+.project-card .main-informations h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.project-card .main-informations p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Project Links */
+.project-card .project-links {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-card .project-links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 
+    background-color var(--transition-speed) ease,
+    transform 0.2s ease;
+}
+
+.project-card .project-links a:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+.project-card .project-links a:active {
+  transform: scale(0.98);
+}
+
+/* More Informations */
+.project-card .more-informations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.project-card .more-informations p {
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-card .more-informations strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: fit-content;
+}
+
+/* Status Badge */
+.project-card .status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.project-card .status.active,
+.project-card .status.aktiv {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+body.darkmode .project-card .status.active,
+body.darkmode .project-card .status.aktiv {
+  background-color: #14532d;
+  color: #86efac;
+}
+
+.project-card .status.completed,
+.project-card .status.abgeschlossen {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+body.darkmode .project-card .status.completed,
+body.darkmode .project-card .status.abgeschlossen {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+.project-card .status.maintenance,
+.project-card .status.wartung {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+body.darkmode .project-card .status.maintenance,
+body.darkmode .project-card .status.wartung {
+  background-color: #78350f;
+  color: #fde68a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #projects-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .project-card .informations {
+    padding: 1.25rem;
+  }
+
+  .project-card .main-informations h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card .project-links {
+    flex-direction: column;
+  }
+
+  .project-card .project-links a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects-container {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .project-card .informations {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .project-card .main-informations h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card .main-informations p,
+  .project-card .more-informations {
+    font-size: 0.875rem;
+  }
+}
+
+/* Loading State */
+#projects-container.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+#projects-container.loading::after {
+  content: "Loading projects...";
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Empty State */
+#projects-container:empty::after {
+  content: "No projects found";
+  color: var(--text-secondary);
+  text-align: center;
+  display: block;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
