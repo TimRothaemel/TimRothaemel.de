@@ -73,3 +73,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-hover);
 }
+/* SVG Icon Dark/Light Mode Umschalten */
+/* Light Mode: nur light-icon anzeigen */
+body:not(.darkmode) .dark-icon {
+  display: none;
+}
+
+/* Dark Mode: nur dark-icon anzeigen */
+body.darkmode .light-icon {
+  display: none;
+}

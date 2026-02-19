@@ -7,42 +7,59 @@
   <div class="nav-links" id="nav-links">
     <a href="/index.html" id="home-btn" class="nav-link" data-i18n="home"></a>
     <a href="/about" id="about-btn" class="nav-link" data-i18n="about"></a>
-    <a href="/contact" id="contact-btn" class="nav-link" data-i18n="contact"></a>
-    <a href="/src/pages/projects/projects.html" id="project-btn" class="nav-link" data-i18n="projects"></a>
-    <a href="/src/pages/skills/skills.html" id="skills-btn" class="nav-link" data-i18n="skills"></a>
+    <a
+      href="/contact"
+      id="contact-btn"
+      class="nav-link"
+      data-i18n="contact"
+    ></a>
+    <a
+      href="/src/pages/projects/projects.html"
+      id="project-btn"
+      class="nav-link"
+      data-i18n="projects"
+    ></a>
+    <a
+      href="/src/pages/skills/skills.html"
+      id="skills-btn"
+      class="nav-link"
+      data-i18n="skills"
+    ></a>
     <a href="/cv" id="cv-btn" class="nav-link" data-i18n="cv"></a>
   </div>
 
   <div class="nav-controls">
     <div class="theme-switch">
-      <button onclick="window.changeTheme('dark')" aria-label="Darkmode">
-        <img
-          class="dark-icon"
-          src="/public/assets/svg/light-mode.svg"
-          alt="Darkmode"
-        />
-      </button>
-      <button onclick="window.changeTheme('light')" aria-label="Lightmode">
-        <img
-          class="light-icon"
-          src="/public/assets/svg/dark-mode.svg"
-          alt="Lightmode"
-        />
-      </button>
+      <button>
+      <img
+        onclick="window.changeTheme('dark')"
+        class="light-icon"
+        src="/public/assets/svg/light-mode.svg"
+        alt="Darkmode"
+      />
+
+      <img
+        onclick="window.changeTheme('light')"
+        class="dark-icon"
+        src="/public/assets/svg/dark-mode.svg"
+        alt="Lightmode"
+      /></button>
     </div>
     <div class="menu-btn" id="menu-btn" aria-label="Menu">
-     <button> <img
-        src="/public/assets/svg/light-menu.svg"
-        alt="Menu"
-        class="dark-icon"
-      />
-    </button>
-      <button><img
-        src="/public/assets/svg/dark-menu.svg"
-        alt="Menu"
-        class="light-icon"
-      />
-    </button>
+      <button>
+        <img
+          src="/public/assets/svg/light-menu.svg"
+          alt="Menu"
+          class="light-icon"
+        />
+      </button>
+      <button>
+        <img
+          src="/public/assets/svg/dark-menu.svg"
+          alt="Menu"
+          class="dark-icon"
+        />
+      </button>
     </div>
   </div>
 </nav>

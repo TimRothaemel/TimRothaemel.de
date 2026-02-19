@@ -137,19 +137,6 @@ nav {
   transform: rotate(20deg);
 }
 
-body.darkmode .theme-switch button:has(.dark-icon) {
-  display: none;
-}
-body:not(.darkmode) .theme-switch button:has(.light-icon) {
-  display: none;
-}
-body.darkmode .menu-btn button:has(.dark-icon) {
-  display: none;
-}
-body:not(.darkmode) .menu-btn button:has(.light-icon) {
-  display: none;
-}
-
 /* ─── RESPONSIVE: Tablet (≤ 1024px) ────────────────────────── */
 @media (max-width: 1024px) {
   nav {
