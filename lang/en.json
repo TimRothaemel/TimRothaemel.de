@@ -8,5 +8,20 @@
   "about": "About",
   "contact": "Contact",
   "cv": "CV",
-  "legal-notice": "Legal Notice"
+  "legal-notice": "Legal Notice",
+  "imprint": {
+    "title": "Legal Notice",
+    "legalReference": "Information according to Section 5 DDG (German Digital Services Act)",
+    "name": "Tim Rothämel",
+    "address": {
+      "street": "Dammstraße 23",
+      "postalCode": "37339",
+      "city": "Breitenworbis",
+      "country": "Germany"
+    },
+    "contactTitle": "Contact",
+    "phone": "Phone: +49 1525 9850350",
+    "email": "Email: timrothamel@gmail.com",
+    "responsible": "Responsible for content according to Section 18 (2) MStV: Tim Rothämel, address as stated above."
+  }
 }

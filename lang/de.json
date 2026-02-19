@@ -8,5 +8,20 @@
   "about": "Über mich",
   "contact": "Kontakt",
   "cv": "Lebenslauf",
-  "legal-notice": "Impressum"
+  "legal-notice": "Impressum",
+  "imprint": {
+    "title": "Impressum",
+    "legalReference": "Angaben gemäß § 5 DDG",
+    "name": "Tim Rothämel",
+    "address": {
+      "street": "Dammstraße 23",
+      "postalCode": "37339",
+      "city": "Breitenworbis",
+      "country": "Deutschland"
+    },
+    "contactTitle": "Kontakt",
+    "phone": "Telefon: +49 1525 9850350",
+    "email": "E-Mail: timrothamel@gmail.com",
+    "responsible": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Tim Rothämel, Anschrift wie oben."
+  }
 }
