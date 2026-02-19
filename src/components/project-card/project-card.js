@@ -70,8 +70,8 @@ card.innerHTML = `
         </div>
         <div class="project-links">
             <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">
-                <img src="/public/assets/svg/dark-github.svg" alt="GitHub" class="light-icon">
-                <img src="/public/assets/svg/light-github.svg" alt="GitHub" class="dark-icon">
+                <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="light-icon">
+                <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="dark-icon">
             </a>
             <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
         </div>
