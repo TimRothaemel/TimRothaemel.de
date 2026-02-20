@@ -1,0 +1,105 @@
+/* Page wrapper */
+.imprint-page {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+/* Centered content container */
+#imprint-container {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 4rem 2rem;
+  animation: fadeInUp 0.6s ease; /* reuses .fade-in keyframe from main.css */
+}
+
+/* Headings */
+#imprint-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+#imprint-container h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraphs */
+#imprint-container p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Legal reference / subtitle line */
+#imprint-container > p:first-of-type {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Address block */
+#imprint-container p br + br {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Links inside imprint (e-mail, phone) */
+#imprint-container a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+#imprint-container a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Card-style wrapper (optional: wrap #imprint-container in .imprint-card) */
+.imprint-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.imprint-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Divider between sections */
+.imprint-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #imprint-container {
+    padding: 2rem 1.25rem;
+  }
+
+  #imprint-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .imprint-card {
+    padding: 1.5rem;
+  }
+}
