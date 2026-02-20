@@ -106,3 +106,7 @@ function createProjectCard(project) {
 }
 
 document.addEventListener("DOMContentLoaded", loadProjects);
+document.addEventListener("changeLanguage", (e) => { // Listen for language change events
+    currentLanguage = e.detail.lang; 
+    displayProjects(projectsData);
+});

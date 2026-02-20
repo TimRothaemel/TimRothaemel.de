@@ -62,3 +62,7 @@ function renderImprint() {
 }
 
 document.addEventListener("DOMContentLoaded", renderImprint);
+document.addEventListener("changeLanguage", (e) => { // Listen for language change events
+  currentLanguage = e.detail.lang; 
+  renderImprint();
+});
