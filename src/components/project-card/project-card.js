@@ -1,8 +1,8 @@
-// Globale Variablen
 let currentLanguage = localStorage.getItem("lang") || "en";
 let projectsData = null;
 let translations = null;
 
+// Translations
 const defaultTranslations = {
   github: "GitHub",
   liveDemo: "Live Demo",
@@ -12,9 +12,30 @@ const defaultTranslations = {
   users: "Users",
   status: "Status",
   projects: "Projects",
+  loadError: "Error loading projects.",
 };
 
-// Projekte laden
+const germanTranslations = {
+  github: "GitHub",
+  liveDemo: "Live Demo",
+  technologies: "Technologien",
+  role: "Rolle",
+  duration: "Dauer",
+  users: "Nutzer",
+  status: "Status",
+  projects: "Projekte",
+  loadError: "Fehler beim Laden der Projekte.",
+};
+
+// Translation helper
+function t(key) {
+  if (currentLanguage === "de") {
+    return germanTranslations[key] || defaultTranslations[key] || key;
+  }
+  return (translations && translations[key]) || defaultTranslations[key] || key;
+}
+
+// Load projects from JSON
 async function loadProjects() {
   try {
     const response = await fetch("/src/projects/tuninghub/tuninghub.json");
@@ -22,19 +43,13 @@ async function loadProjects() {
     projectsData = data.projects;
     displayProjects(projectsData);
   } catch (error) {
-    console.error("Fehler beim Laden der Projekte:", error);
+    console.error("Error loading projects:", error);
     const container = document.getElementById("projects-container");
-    if (container)
-      container.innerHTML = "<p>Fehler beim Laden der Projekte.</p>";
+    if (container) container.innerHTML = `<p>${t("loadError")}</p>`;
   }
 }
 
-// Übersetzung holen
-function t(key) {
-  return (translations && translations[key]) || defaultTranslations[key] || key;
-}
-
-// Projekte anzeigen
+// Render project list
 function displayProjects(projects) {
   const container = document.getElementById("projects-container");
   if (!container) {
@@ -42,51 +57,52 @@ function displayProjects(projects) {
     return;
   }
 
-  container.innerHTML = ""; // Container leeren
-
-  projects.forEach((project) => {
-    const card = createProjectCard(project);
-    container.appendChild(card);
-  });
+  container.innerHTML = "";
+  projects.forEach((project) =>
+    container.appendChild(createProjectCard(project)),
+  );
 }
 
+// Build a single project card
 function createProjectCard(project) {
   const card = document.createElement("div");
   card.className = "project-card";
 
-  // Klick auf die gesamte Karte führt zur Detailseite
   card.addEventListener("click", (e) => {
     if (!e.target.closest(".project-links a")) {
       window.location.href = `${project.detailsUrl}&lang=${currentLanguage}`;
     }
   });
 
-card.innerHTML = `
+  card.innerHTML = `
     <img src="${project.image}" alt="${project.title[currentLanguage]}">
     <div class="informations">
-        <div class="main-informations">
-            <h3>${project.title[currentLanguage]}</h3>
-            <p>${project.description[currentLanguage]}</p>
-        </div>
-        <div class="project-links">
-            <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">
-                <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="light-icon">
-                <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="dark-icon">
-            </a>
-            <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
-        </div>
-        <div class="more-informations">
-            <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>
-            <p><strong>${t("role")}:</strong> ${project.role[currentLanguage]}</p>
-            <p><strong>${t("duration")}:</strong> ${project.duration[currentLanguage]}</p>
-            <p><strong>${t("users")}:</strong> ${project.users}</p>
-            <p><strong>${t("status")}:</strong> <span class="status ${project.status[currentLanguage].toLowerCase()}">${project.status[currentLanguage]}</span></p>
-        </div>
+      <div class="main-informations">
+        <h3>${project.title[currentLanguage]}</h3>
+        <p>${project.description[currentLanguage]}</p>
+      </div>
+      <div class="project-links">
+        <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">
+          <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="light-icon">
+          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="dark-icon">
+        </a>
+        <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
+      </div>
+      <div class="more-informations">
+        <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>
+        <p><strong>${t("role")}:</strong> ${project.role[currentLanguage]}</p>
+        <p><strong>${t("duration")}:</strong> ${project.duration[currentLanguage]}</p>
+        <p><strong>${t("users")}:</strong> ${project.users}</p>
+        <p><strong>${t("status")}:</strong>
+          <span class="status ${project.status[currentLanguage].toLowerCase()}">
+            ${project.status[currentLanguage]}
+          </span>
+        </p>
+      </div>
     </div>
-`;
+  `;
 
   return card;
 }
 
-// Projekte beim Laden der Seite anzeigen
 document.addEventListener("DOMContentLoaded", loadProjects);

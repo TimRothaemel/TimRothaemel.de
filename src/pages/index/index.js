@@ -5,8 +5,7 @@ import { animateWords } from "../../components/write-animation/write-animation.j
 draw();
 
 document.addEventListener("headerLoaded", function () {
-  let currentSide = document.getElementById("home-btn"); // Highlight the current page in the header
-  currentSide.classList.add("active-btn");
+  document.getElementById("home-btn")?.classList.add("active-btn"); // Highlight the current page in the header
 });
 
 document.addEventListener("DOMContentLoaded", () => {

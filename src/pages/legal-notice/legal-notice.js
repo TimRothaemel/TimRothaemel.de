@@ -1,36 +1,64 @@
+let currentLanguage = localStorage.getItem("lang") || "en";
+
+// Translations
+const defaultTranslations = {
+  imprintTitle: "Imprint",
+  legalReference: "Information according to § 5 DDG",
+  country: "Germany",
+  contactTitle: "Contact",
+  responsible: "Responsible for content under § 18 para. 2 MStV: Tim Rothämel, address as stated above.",
+  loadError: "Error rendering imprint.",
+};
+
+const germanTranslations = {
+  imprintTitle: "Impressum",
+  legalReference: "Angaben gemäß § 5 DDG",
+  country: "Deutschland",
+  contactTitle: "Kontakt",
+  responsible: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Tim Rothämel, Anschrift wie oben.",
+  loadError: "Fehler beim Anzeigen des Impressums.",
+};
+
+// Translation helper
+function t(key) {
+  if (currentLanguage === "de") {
+    return germanTranslations[key] || defaultTranslations[key] || key;
+  }
+  return defaultTranslations[key] || key;
+}
+
+// Highlight active nav button
 document.addEventListener("headerLoaded", function () {
-  let currentSide = document.getElementById("legal-notice-btn"); // Highlight the current page in the header
-  currentSide.classList.add("active-btn");
+  document.getElementById("legal-notice-btn")?.classList.add("active-btn");// Highlight the current page in the header
 });
+
+// Render imprint content
 function renderImprint() {
   const container = document.getElementById("imprint-container");
-  if (!container) return;
-
-  const isGerman = currentLanguage === "de";
+  if (!container) {
+    console.warn("renderImprint: #imprint-container not found in DOM.");
+    return;
+  }
 
   container.innerHTML = `
-    <h1>${isGerman ? "Impressum" : t("imprintTitle")}</h1>
-    <p>${isGerman ? "Angaben gemäß § 5 DDG" : t("legalReference")}</p>
+    <h1>${t("imprintTitle")}</h1>
+    <p>${t("legalReference")}</p>
 
     <p>
       Tim Rothämel<br>
       Dammstraße 23<br>
       37339 Breitenworbis<br>
-      ${isGerman ? "Deutschland" : "Germany"}
+      ${t("country")}
     </p>
 
-    <h2>${isGerman ? "Kontakt" : t("contact")}</h2>
+    <h2>${t("contactTitle")}</h2>
     <p>
       Telefon: +49 1525 9850350<br>
       E-Mail: timrothamel@gmail.com
     </p>
 
-    <p>
-      ${isGerman 
-        ? "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Tim Rothämel, Anschrift wie oben."
-        : t("responsible") + ": Tim Rothämel, address as stated above."
-      }
-    </p>
+    <p>${t("responsible")}</p>
   `;
 }
-renderImprint();
+
+document.addEventListener("DOMContentLoaded", renderImprint);

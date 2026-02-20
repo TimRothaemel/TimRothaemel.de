@@ -1,4 +1,3 @@
 document.addEventListener("headerLoaded", function () {
-  let currentSide = document.getElementById("project-btn"); // Highlight the current page in the header
-  currentSide.classList.add("active-btn");
+  document.getElementById("project-btn")?.classList.add("active-btn"); // Highlight the current page in the header
 });
