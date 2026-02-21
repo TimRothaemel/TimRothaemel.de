@@ -82,11 +82,14 @@ function createProjectCard(project) {
         <p>${project.description[currentLanguage]}</p>
       </div>
       <div class="project-links">
-        <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">
-          <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="light-icon">
-          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="dark-icon">
+        <a href="${project.githubUrl}" class="github-link" target="_blank" onclick="event.stopPropagation()">
+          <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="dark-icon">
+          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">GitHub
         </a>
-        <a href="${project.liveUrl}" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}</a>
+        <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}
+                  <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
+          <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
+        </a>
       </div>
       <div class="more-informations">
         <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>

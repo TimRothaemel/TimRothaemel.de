@@ -15,7 +15,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: 
+  transition:
     transform var(--transition-speed) ease,
     box-shadow var(--transition-speed) ease;
   cursor: pointer;
@@ -61,7 +61,7 @@
 }
 
 /* Project Links */
-.project-card .project-links {
+.project-card {
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
@@ -69,7 +69,7 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.project-card .project-links a {
+.project-card a {
   flex: 1;
   display: flex;
   align-items: center;
@@ -82,22 +82,22 @@
   border-radius: 6px;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: 
+  transition:
     background-color var(--transition-speed) ease,
     transform 0.2s ease;
 }
 
-.project-card .project-links a:hover {
+.project-card a:hover {
   background-color: var(--accent-hover);
   transform: scale(1.02);
 }
 
-.project-card .project-links a:active {
+.project-card a:active {
   transform: scale(0.98);
 }
 
 /* Icon Größe in Links */
-.project-card .project-links a img {
+.project-card a img {
   width: 20px;
   height: 20px;
   object-fit: contain;
@@ -213,11 +213,11 @@ body.darkmode .project-card .status.wartung {
     font-size: 1.3rem;
   }
 
-  .project-card .project-links {
+  .project-card {
     flex-direction: column;
   }
 
-  .project-card .project-links a {
+  .project-card a {
     width: 100%;
   }
 }
@@ -245,4 +245,53 @@ body.darkmode .project-card .status.wartung {
   .project-card .more-informations {
     font-size: 0.875rem;
   }
+}
+/* Project Links */
+.project-card .project-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-card .project-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition:
+    background-color var(--transition-speed) ease,
+    transform 0.2s ease;
+}
+
+.project-card .project-links .github-link {
+  flex-direction: row;
+  margin-left: 0;
+}
+
+.project-card .project-links .live-demo-link {
+  flex-direction: row-reverse;
+}
+
+.project-card .project-links a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.project-card .project-links a:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.project-card .project-links a:active {
+  transform: scale(0.98);
 }
