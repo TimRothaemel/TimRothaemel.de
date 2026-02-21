@@ -61,23 +61,22 @@
 }
 
 /* Project Links */
-.project-card {
+.project-card .project-links {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1rem 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 
-.project-card a {
-  flex: 1;
+.project-card .project-links a {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  background-color: var(--accent-color);
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
@@ -87,20 +86,28 @@
     transform 0.2s ease;
 }
 
-.project-card a:hover {
-  background-color: var(--accent-hover);
-  transform: scale(1.02);
+.project-card .project-links .github-link {
+  flex-direction: row;
+  margin-left: 0;
 }
 
-.project-card a:active {
-  transform: scale(0.98);
+.project-card .project-links .live-demo-link {
+  flex-direction: row-reverse;
 }
 
-/* Icon Größe in Links */
-.project-card a img {
+.project-card .project-links a img {
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+
+.project-card .project-links a:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.project-card .project-links a:active {
+  transform: scale(0.98);
 }
 
 /* More Informations */
@@ -122,6 +129,72 @@
   color: var(--text-primary);
   font-weight: 600;
   min-width: fit-content;
+}
+
+/* Tech Badges */
+.project-card .tech-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-card .tech-badges strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.project-card .tech-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-card .tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition:
+    border-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+.project-card .tech-badge:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.project-card .tech-badge img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Fallback: erster Buchstabe als farbiger Kreis */
+.project-card .tech-icon-fallback {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Darkmode Tech Badges */
+body.darkmode .project-card .tech-badge {
+  background-color: var(--bg-secondary);
 }
 
 /* Status Badge */
@@ -212,14 +285,6 @@ body.darkmode .project-card .status.wartung {
   .project-card .main-informations h3 {
     font-size: 1.3rem;
   }
-
-  .project-card {
-    flex-direction: column;
-  }
-
-  .project-card a {
-    width: 100%;
-  }
 }
 
 @media (max-width: 480px) {
@@ -245,53 +310,9 @@ body.darkmode .project-card .status.wartung {
   .project-card .more-informations {
     font-size: 0.875rem;
   }
-}
-/* Project Links */
-.project-card .project-links {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
 
-.project-card .project-links a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition:
-    background-color var(--transition-speed) ease,
-    transform 0.2s ease;
-}
-
-.project-card .project-links .github-link {
-  flex-direction: row;
-  margin-left: 0;
-}
-
-.project-card .project-links .live-demo-link {
-  flex-direction: row-reverse;
-}
-
-.project-card .project-links a img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-.project-card .project-links a:hover {
-  text-decoration: underline;
-  transform: scale(1.02);
-}
-
-.project-card .project-links a:active {
-  transform: scale(0.98);
+  .project-card .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
 }

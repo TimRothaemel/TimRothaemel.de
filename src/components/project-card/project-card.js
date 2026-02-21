@@ -35,6 +35,26 @@ function t(key) {
   return (translations && translations[key]) || defaultTranslations[key] || key;
 }
 
+// Icon mapping für Technologien (dark + light)
+const techIcons = {
+  "HTML":        { dark: "/public/assets/svg/technologies/dark-html5.svg",        light: "/public/assets/svg/technologies/light-html5.svg" },
+  "JavaScript":  { dark: "/public/assets/svg/technologies/dark-javascript.svg",  light: "/public/assets/svg/technologies/light-javascript.svg" },
+  "CSS":         { dark: "/public/assets/svg/technologies/dark-css.svg",         light: "/public/assets/svg/technologies/light-css.svg" },
+  "Supabase":    { dark: "/public/assets/svg/platforms/dark-supabase.svg",    light: "/public/assets/svg/platforms/light-supabase.svg" }
+};
+
+// Render tech badges with dark/light icons
+function renderTechBadges(technologies) {
+  return technologies.map(tech => {
+    const icons = techIcons[tech];
+    const iconHtml = icons
+      ? `<img src="${icons.dark}"  alt="${tech}" class="dark-icon"  onerror="this.style.display='none'">
+         <img src="${icons.light}" alt="${tech}" class="light-icon" onerror="this.style.display='none'">`
+      : `<span class="tech-icon-fallback">${tech.charAt(0)}</span>`;
+    return `<span class="tech-badge">${iconHtml}${tech}</span>`;
+  }).join("");
+}
+
 // Load projects from JSON
 async function loadProjects() {
   try {
@@ -84,15 +104,22 @@ function createProjectCard(project) {
       <div class="project-links">
         <a href="${project.githubUrl}" class="github-link" target="_blank" onclick="event.stopPropagation()">
           <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="dark-icon">
-          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">GitHub
+          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">
+          ${t("github")}
         </a>
-        <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">${t("liveDemo")}
-                  <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
+        <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
+          ${t("liveDemo")}
+          <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
           <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
         </a>
       </div>
       <div class="more-informations">
-        <p><strong>${t("technologies")}:</strong> ${project.technologies.join(", ")}</p>
+        <div class="tech-badges">
+          <strong>${t("technologies")}:</strong>
+          <div class="tech-badges-list">
+            ${renderTechBadges(project.technologies)}
+          </div>
+        </div>
         <p><strong>${t("role")}:</strong> ${project.role[currentLanguage]}</p>
         <p><strong>${t("duration")}:</strong> ${project.duration[currentLanguage]}</p>
         <p><strong>${t("users")}:</strong> ${project.users}</p>
@@ -109,7 +136,7 @@ function createProjectCard(project) {
 }
 
 document.addEventListener("DOMContentLoaded", loadProjects);
-document.addEventListener("changeLanguage", (e) => { // Listen for language change events
-    currentLanguage = e.detail.lang; 
-    displayProjects(projectsData);
+document.addEventListener("changeLanguage", (e) => {
+  currentLanguage = e.detail.lang;
+  displayProjects(projectsData);
 });
