@@ -150,7 +150,7 @@ nav {
 }
 
 /* ─── RESPONSIVE: Mobile (≤ 768px) ─────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 799px) {
   nav {
     padding: 1rem 1.5rem;
     grid-template-columns: auto 1fr auto; /* Burger | Leer | Controls */
