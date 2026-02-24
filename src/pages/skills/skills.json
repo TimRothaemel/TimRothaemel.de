@@ -1,0 +1,44 @@
+[
+  {
+    "title": "JavaScript",
+    "category": "Core Stack",
+    "details": [
+      "DOM Manipulation",
+      "Async/Await",
+      "Fetch API",
+      "ES6+ Features",
+      "Event Handling",
+      "Modular Code Structure"
+    ]
+  },
+  {
+    "title": "HTML",
+    "category": "Core Stack",
+    "details": [
+      "Semantic Elements",
+      "Forms and Validation",
+      "Media Embedding",
+      "Accessibility Best Practices"
+    ]
+  },
+  {
+    "title": "CSS",
+    "category": "Core Stack",
+    "details": [
+      "Flexbox and Grid Layouts",
+      "Responsive Design",
+      "CSS Variables",
+      "Animations and Transitions"
+    ]
+  },
+  {
+    "title": "Supabase",
+    "category": "Core Stack",
+    "details": [
+      "Authentication",
+      "PostgreSQL Queries",
+      "Realtime Features",
+      "File Storage"
+    ]
+  }
+]
