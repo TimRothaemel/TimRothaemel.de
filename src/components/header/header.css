@@ -64,18 +64,6 @@ nav {
   background: var(--bg-primary);
 }
 
-.active-btn {
-  background: var(--accent-color);
-  color: white !important;
-  padding: 0.4rem 1rem;
-}
-
-.active-btn:hover {
-  opacity: 0.85;
-  background: var(--accent-color) !important;
-  transform: translateY(-2px);
-}
-
 /* ─── Language + Theme Buttons ──────────────────────────────── */
 .menu-btn {
   display: none; /* Nur auf Mobile sichtbar */
@@ -93,14 +81,32 @@ nav {
   transition: all var(--transition-speed) ease;
 }
 
-.language-switch button:hover,
+/* keep active-btn styling after generic button rules so it isn't reset */
+.language-switch button.active-btn,
+.menu-btn button.active-btn,
+.nav-link.active,
+.active-btn {
+  background: var(--accent-color);
+  color: white !important;
+}
+
+.active-btn:hover {
+  opacity: 0.85;
+  background: var(--accent-color) !important;
+  transform: translateY(-2px);
+}
+
+
 .language-switch button.active,
 .menu-btn button:hover,
 .menu-btn button.active {
   background: var(--accent-color);
   color: white;
 }
-
+.language-switch button:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+}
 .theme-switch {
   display: flex;
   gap: 0.25rem;

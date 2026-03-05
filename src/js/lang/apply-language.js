@@ -8,6 +8,5 @@ export async function loadLang(lang) {
     const key = el.dataset.i18n;
     el.textContent = data[key];
   });
-
   localStorage.setItem("lang", lang);
 }
