@@ -23,16 +23,3 @@ document.addEventListener("headerLoaded", function () {
     document.getElementById("en-btn")?.classList.remove("active-btn");
   }
 });
-
-// Update language switch buttons whenever the language actually changes later
-// (i.e. when the user clicks one of the buttons).
-document.addEventListener("changeLanguage", function (e) {
-  const currentLang = e.detail.lang;
-  if (currentLang === "en") {
-    document.getElementById("en-btn")?.classList.add("active-btn");
-    document.getElementById("de-btn")?.classList.remove("active-btn");
-  } else if (currentLang === "de") {
-    document.getElementById("de-btn")?.classList.add("active-btn");
-    document.getElementById("en-btn")?.classList.remove("active-btn");
-  }
-});

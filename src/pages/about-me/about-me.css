@@ -1,0 +1,120 @@
+/* =============================================
+   About Me Page
+   ============================================= */
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  margin-top: 8rem;
+}
+
+/* =============================================
+   Card (Bild + Infos zusammen)
+   ============================================= */
+
+.about-me > * {
+  width: 100%;
+  max-width: 480px;
+}
+
+.about-me {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wrapper: Bild oben, Infos unten – eine gemeinsame Card */
+.about-me .profile.picture,
+.about-me .informations {
+  width: 100%;
+  max-width: 480px;
+}
+
+.about-me .profile.picture {
+  background-color: var(--bg-secondary);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-me .profile.picture img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.about-me .profile.picture img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =============================================
+   Info Card
+   ============================================= */
+
+.informations {
+  background-color: var(--bg-secondary);
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.informations p {
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-bottom: 1px solid var(--border-color);
+  transition:
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+.informations p:last-child {
+  border-bottom: none;
+}
+
+.informations p:first-child {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.informations p:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 480px) {
+  .about-me {
+    padding: 0 0.75rem;
+  }
+
+  .about-me .profile.picture img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .informations p {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
