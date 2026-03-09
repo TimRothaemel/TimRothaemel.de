@@ -6,6 +6,16 @@ import { changeTheme } from "./theme/change-theme.js";
 window.changeLanguage = changeLanguage; // Expose to global scope (header onclick)
 window.changeTheme = changeTheme; // Expose to global scope (header onclick)
 
+function updateLanguageButtonStyle(lang) {
+  if (lang === "en") {
+    document.getElementById("en-btn")?.classList.add("active-btn");
+    document.getElementById("de-btn")?.classList.remove("active-btn");
+  } else if (lang === "de") {
+    document.getElementById("de-btn")?.classList.add("active-btn");
+    document.getElementById("en-btn")?.classList.remove("active-btn");
+  }
+}
+
 document.addEventListener("headerLoaded", function () {
   // Wait for header to load before applying theme and language
   // Load saved theme or default to dark
@@ -15,11 +25,10 @@ document.addEventListener("headerLoaded", function () {
   // Load saved language or default to english
   let currentLang = localStorage.getItem("lang") || "en";
   loadLang(currentLang);
-      if (currentLang === "en") {
-    document.getElementById("en-btn")?.classList.add("active-btn");
-    document.getElementById("de-btn")?.classList.remove("active-btn");
-  } else if (currentLang === "de") {
-    document.getElementById("de-btn")?.classList.add("active-btn");
-    document.getElementById("en-btn")?.classList.remove("active-btn");
-  }
+  updateLanguageButtonStyle(currentLang);
+});
+
+// Update language button style when language is changed
+document.addEventListener("changeLanguage", function (event) {
+  updateLanguageButtonStyle(event.detail.lang);
 });
