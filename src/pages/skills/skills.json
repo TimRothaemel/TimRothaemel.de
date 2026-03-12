@@ -40,5 +40,27 @@
       "Realtime Features",
       "File Storage"
     ]
+  },{
+    "title": "Docker",
+    "category": "Core Stack",
+    "details": [
+      "Containerization",
+      "Docker Compose",
+      "Image Optimization"
+    ]
+  },{
+    "title": "Git",
+    "category": "Core Stack",
+    "details": [
+      "Version Control",
+      "Branching and Merging",
+      "Collaboration"
+    ]
+  },{
+    "title": "Node.js",
+    "category": "Core Stack",
+    "details": [
+      "File Storage"
+    ]
   }
 ]
