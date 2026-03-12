@@ -93,7 +93,6 @@ function createProjectCard(project) {
       window.location.href = `${project.detailsUrl}&lang=${currentLanguage}`;
     }
   });
-
   card.innerHTML = `
     <img src="${project.image}" alt="${project.title[currentLanguage]}">
     <div class="informations">
@@ -107,11 +106,13 @@ function createProjectCard(project) {
           <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">
           ${t("github")}
         </a>
-        <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
-          ${t("liveDemo")}
-          <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
-          <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
-        </a>
+${project.liveUrl ? `
+  <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
+    ${t("liveDemo")}
+    <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
+    <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
+  </a>
+` : ''}
       </div>
       <div class="more-informations">
         <div class="tech-badges">

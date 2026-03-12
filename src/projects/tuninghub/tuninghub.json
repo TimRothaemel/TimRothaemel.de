@@ -26,7 +26,7 @@
         "en": "offline"
       },
       "githubUrl": "https://github.com/username/project1",
-      "liveUrl": "https://project1.example.com",
+      "liveUrl": "",
       "detailsUrl": "project-details.html?id=1"
     }
  ]
