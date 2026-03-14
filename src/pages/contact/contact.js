@@ -1,24 +1,18 @@
-import emailjs from '@emailjs/browser';
-
-emailjs.init("IcDUeahyb3vLGAwak");
-
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  emailjs.sendForm(
-    "SERVICE_ID",
-    "TEMPLATE_ID",
-    this
-  ).then(
-    () => {
-      alert("Message sent!");
-      form.reset();
-    },
-    (error) => {
-      alert("Failed to send message");
-      console.log(error);
-    }
-  );
-});
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent("Portfolio Contact");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:timrothamel@outlook.de?subject=${subject}&body=${body}`;
+  });
+}
