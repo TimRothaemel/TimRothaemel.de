@@ -13,6 +13,6 @@ if (form) {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
 
-    window.location.href = `mailto:timrothamel@outlook.de?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:timrothaemel@outlook.de?subject=${subject}&body=${body}`;
   });
 }
