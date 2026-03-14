@@ -1,45 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="contactTitle"></title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="./contact.css">
-    <link rel="stylesheet" href="../../components/header/header.css">
- 
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="./contact.css" />
+    <link rel="stylesheet" href="../../components/header/header.css" />
+
     <script type="module" src="/src/js/main.js"></script>
     <script src="../../components/header/header-loader.js"></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <header class="header"></header>
     <main>
-        <section class="contact-section">
-            <img src="/public/assets/img/me/me-withoutbg.png" alt="Tim Rothaemel" class="contact-image">
-            <div class="contact-options">
-                <a href="tel: +49 1525 9850350" target="_blank">
-                    <img src="/public/assets/svg/platforms/dark-phone.svg" alt="phone" class="contact-icon dark-icon">
-                    <img src="/public/assets/svg/platforms/light-phone.svg" alt="phone" class="contact-icon light-icon">
-                </a>
-                <a href="mailto:timrothamel@gmail.com" target="_blank">
-                    <img src="/public/assets/svg/platforms/dark-envelope.svg" alt="email" class="contact-icon dark-icon">
-                    <img src="/public/assets/svg/platforms/light-envelope.svg" alt="email" class="contact-icon light-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/timrothämel/" target="_blank">
-                    <img src="/public/assets/svg/platforms/dark-linkedin.svg" alt="LinkedIn" class="contact-icon dark-icon">
-                    <img src="/public/assets/svg/platforms/light-linkedin.svg" alt="LinkedIn" class="contact-icon light-icon">
-                </a>
-                <a href="https://github.com/TimRothaemel" target="_blank">
-                    <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="contact-icon dark-icon">
-                    <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="contact-icon light-icon">
-                </a>
-                <a href="https://www.instagram.com/tim_rth09/" target="_blank">
-                    <img src="/public/assets/svg/platforms/dark-instagram.svg" alt="Instagram" class="contact-icon dark-icon">
-                    <img src="/public/assets/svg/platforms/light-instagram.svg" alt="Instagram" class="contact-icon light-icon">
-                </a>
-            </div>
-        </section>
+      <section class="contact-section">
+        <form id="contact-form">
+          <h2 data-i18n="contact_title"></h2>
+          <p data-i18n="contact_description"></p>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit" data-i18n="contact_submit"></button>
+        </form>
+        <div class="contact-options">
+          <a href="tel: +49 1525 9850350" target="_blank">
+            <img
+              src="/public/assets/svg/platforms/dark-phone.svg"
+              alt="phone"
+              class="contact-icon dark-icon"
+            />
+            <img
+              src="/public/assets/svg/platforms/light-phone.svg"
+              alt="phone"
+              class="contact-icon light-icon"
+            />
+          </a>
+          <a href="mailto:timrothamel@gmail.com" target="_blank">
+            <img
+              src="/public/assets/svg/platforms/dark-envelope.svg"
+              alt="email"
+              class="contact-icon dark-icon"
+            />
+            <img
+              src="/public/assets/svg/platforms/light-envelope.svg"
+              alt="email"
+              class="contact-icon light-icon"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/timrothämel/" target="_blank">
+            <img
+              src="/public/assets/svg/platforms/dark-linkedin.svg"
+              alt="LinkedIn"
+              class="contact-icon dark-icon"
+            />
+            <img
+              src="/public/assets/svg/platforms/light-linkedin.svg"
+              alt="LinkedIn"
+              class="contact-icon light-icon"
+            />
+          </a>
+          <a href="https://github.com/TimRothaemel" target="_blank">
+            <img
+              src="/public/assets/svg/platforms/dark-github.svg"
+              alt="GitHub"
+              class="contact-icon dark-icon"
+            />
+            <img
+              src="/public/assets/svg/platforms/light-github.svg"
+              alt="GitHub"
+              class="contact-icon light-icon"
+            />
+          </a>
+          <a href="https://www.instagram.com/tim_rth09/" target="_blank">
+            <img
+              src="/public/assets/svg/platforms/dark-instagram.svg"
+              alt="Instagram"
+              class="contact-icon dark-icon"
+            />
+            <img
+              src="/public/assets/svg/platforms/light-instagram.svg"
+              alt="Instagram"
+              class="contact-icon light-icon"
+            />
+          </a>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>

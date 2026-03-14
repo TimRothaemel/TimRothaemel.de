@@ -13,6 +13,12 @@
   "about-me-email": "Email: timrothamel@gmail.com",
   "contact": "Contact",
   "contact_button": "Contact Me",
+  "contact_title": "Contact Me",
+  "contact_description": "If you have any questions or would like to get in touch with me, please don't hesitate to send me a message. I look forward to hearing from you!",
+  "contact_submit": "Send Message",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_message": "Message",
   "cv": "CV",
   "legal-notice": "Legal Notice",
   "imprint": {
