@@ -12,7 +12,7 @@
 #imprint-container {
   max-width: 720px;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
   padding: 4rem 2rem;
   animation: fadeInUp 0.6s ease; /* reuses .fade-in keyframe from main.css */
 }
