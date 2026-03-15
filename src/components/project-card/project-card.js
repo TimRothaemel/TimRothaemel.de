@@ -90,7 +90,7 @@ function createProjectCard(project) {
 
   card.addEventListener("click", (e) => {
     if (!e.target.closest(".project-links a")) {
-      window.location.href = `${project.detailsUrl}&lang=${currentLanguage}`;
+      window.location.href = `${project.detailsUrl}`;
     }
   });
   card.innerHTML = `

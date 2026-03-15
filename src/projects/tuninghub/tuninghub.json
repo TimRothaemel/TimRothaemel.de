@@ -25,9 +25,9 @@
         "de": "offline",
         "en": "offline"
       },
-      "githubUrl": "https://github.com/username/project1",
+      "githubUrl": "https://github.com/TimRothaemel/TuningHub",
       "liveUrl": "",
-      "detailsUrl": "project-details.html?id=1"
+      "detailsUrl": "/src/projects/tuninghub/tuninghub.html"
     }
  ]
 }
