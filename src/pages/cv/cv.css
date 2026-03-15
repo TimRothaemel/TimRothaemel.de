@@ -1,0 +1,105 @@
+/* ============================
+   CV Page Styles
+   Uses CSS variables from main.css
+   ============================ */
+
+.cv-section {
+  max-width: 960px;
+  margin: 6rem auto 0;
+  padding: 3rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Title */
+.cv-section h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Description */
+.cv-section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* PDF iframe */
+.cv-iframe {
+  width: 100%;
+  max-width: 860px;
+  height: 75vh;
+  min-height: 480px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-secondary);
+  transition: box-shadow var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+
+.cv-iframe:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Download button */
+.download-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 0.7rem 1.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease,
+              transform var(--transition-speed) ease;
+}
+
+.download-cv-btn:hover {
+  background-color: var(--accent-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.download-cv-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.download-cv-btn::before {
+  content: '↓';
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cv-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .cv-iframe {
+    height: 60vh;
+    min-height: 340px;
+    border-radius: 6px;
+  }
+
+  .download-cv-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

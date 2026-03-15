@@ -20,6 +20,10 @@
   "contact_email": "E-Mail",
   "contact_message": "Nachricht",
   "cv": "Lebenslauf",
+  "cv_title": "Lebenslauf",
+  "cv_description": "Hier findest du meinen Lebenslauf, der einen Überblick über meine Ausbildung, Berufserfahrung, Fähigkeiten und Projekte bietet. Wenn du Fragen hast oder mehr über meinen Hintergrund erfahren möchtest, zögere nicht, mich zu kontaktieren.",
+  "cv_download": "Lebenslauf herunterladen",
+  "projects_title": "Projekte",
   "legal-notice": "Impressum",
   "imprint": {
     "title": "Impressum",

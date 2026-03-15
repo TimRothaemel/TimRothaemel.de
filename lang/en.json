@@ -20,6 +20,10 @@
   "contact_email": "Email",
   "contact_message": "Message",
   "cv": "CV",
+  "cv_title": "Curriculum Vitae",
+  "cv_description": "Here you can find my CV, which provides an overview of my education, work experience, skills, and projects. If you have any questions or would like to learn more about my background, please feel free to contact me.",
+  "cv_download": "Download CV",
+  "projects_title": "Projects",
   "legal-notice": "Legal Notice",
   "imprint": {
     "title": "Legal Notice",
