@@ -1,3 +1,8 @@
+document.addEventListener("headerLoaded", function () {
+  document.getElementById("contact-btn")?.classList.add("active-btn");
+});
+
+
 const form = document.getElementById("contact-form");
 
 if (form) {
