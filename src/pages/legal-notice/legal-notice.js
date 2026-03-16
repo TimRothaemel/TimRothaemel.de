@@ -54,7 +54,7 @@ function renderImprint() {
     <h2>${t("contactTitle")}</h2>
     <p>
       Telefon: +49 1525 9850350<br>
-      E-Mail: timrothamel@gmail.com
+      E-Mail: timrothaemel@outlook.de
     </p>
 
     <p>${t("responsible")}</p>
