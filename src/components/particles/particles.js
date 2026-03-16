@@ -1,18 +1,23 @@
+/*
+ * Particle background animation.
+ *
+ * Safari/iOS can block localStorage (private mode), so the canvas must rely on
+ * current CSS variables (via computed styles) to match theme changes.
+ */
+
 let animationStarted = false;
 let flakes = [];
 
-function initParticles() {
-  if (animationStarted) return;
-
+function initCanvas() {
   const canvas = document.getElementById("bg");
-  if (!canvas) return;
+  if (!canvas) return null;
 
   const ctx = canvas.getContext("2d");
-  if (!ctx) return;
+  if (!ctx) return null;
 
-  const dpr = window.devicePixelRatio || 1;// Handle high-DPI screens
+  const dpr = window.devicePixelRatio || 1;
 
-  function resize() {// Adjust canvas size for high-DPI screens
+  function resize() {
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
     canvas.style.width = `${window.innerWidth}px`;
@@ -23,6 +28,25 @@ function initParticles() {
   resize();
   window.addEventListener("resize", resize);
 
+  return { canvas, ctx };
+}
+
+function getThemeVar(name, fallback) {
+  // Prefer variables on <body> so darkmode overrides (body.darkmode) take effect.
+  // Fallback to :root if the variable is not set on body.
+  const body = document.body;
+  const root = document.documentElement;
+
+  const bodyValue = getComputedStyle(body).getPropertyValue(name).trim();
+  if (bodyValue) return bodyValue;
+
+  const rootValue = getComputedStyle(root).getPropertyValue(name).trim();
+  if (rootValue) return rootValue;
+
+  return fallback;
+}
+
+function startAnimation(canvas, ctx) {
   const FLAKES = 120;
   flakes = [];
 
@@ -35,16 +59,17 @@ function initParticles() {
     });
   }
 
-  function getParticleColor() {
-    const value = getComputedStyle(document.body).getPropertyValue("--text-secondary");
-    return value ? value.trim() : "#485470";
-  }
-
   function drawFrame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = getParticleColor();
+    const bgColor = getThemeVar("--bg-primary", "transparent");
 
-    for (let f of flakes) {
+    // Draw a solid background so we always match the current theme.
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = getThemeVar("--text-secondary", "#485470");
+    ctx.globalAlpha = 0.65; // make particles subtly transparent so the background shows through
+
+    for (const f of flakes) {
       ctx.beginPath();
       ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
       ctx.fill();
@@ -56,22 +81,31 @@ function initParticles() {
       }
     }
 
+    // Restore full alpha in case other code draws to the canvas later
+    ctx.globalAlpha = 1;
+
     requestAnimationFrame(drawFrame);
   }
 
-  animationStarted = true;
   drawFrame();
 }
 
-// Ensure the canvas exists before starting animation (especially for module scripts in <head>)
+function initParticles() {
+  if (animationStarted) return;
+
+  const ctxObj = initCanvas();
+  if (!ctxObj) return;
+
+  startAnimation(ctxObj.canvas, ctxObj.ctx);
+  animationStarted = true;
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initParticles);
 } else {
   initParticles();
 }
 
-// Exported for compatibility with existing imports.
 export function draw() {
   initParticles();
 }
-
