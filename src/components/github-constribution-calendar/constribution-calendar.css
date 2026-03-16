@@ -6,7 +6,6 @@
   --color-calendar-graph-day-L4-bg: #1e3a8a;
 }
 
-/* Nur der reine Kalender */
 .calendar {
   font-family: inherit;
   background-color: var(--bg-secondary);
@@ -18,7 +17,6 @@
   margin-top: 2rem;
 }
 
-/* Tage */
 .ContributionCalendar-day[data-level="0"] {
   background-color: var(--color-calendar-graph-day-bg);
   border-radius: 3px;
@@ -40,7 +38,6 @@
   border-radius: 3px;
 }
 
-/* Grid */
 table.ContributionCalendar-grid {
   margin: 0 auto;
   border-spacing: 3px;
@@ -51,7 +48,6 @@ table.ContributionCalendar-grid td {
   padding: 0;
 }
 
-/* Labels (Monate & Wochentage) */
 text.ContributionCalendar-label,
 .calendar-graph text.wday,
 .calendar-graph text.month {
@@ -64,7 +60,6 @@ td.ContributionCalendar-label span[aria-hidden="true"] {
   color: var(--text-secondary);
 }
 
-/* Alles verstecken was nicht der reine Kalender ist */
 table.ContributionCalendar-grid td span.sr-only,
 tool-tip,
 .calendar .width-full > .float-left,
@@ -80,7 +75,6 @@ h2.f4.text-normal.mb-3,
   display: none !important;
 }
 
-/* Tooltip */
 .day-tooltip {
   white-space: nowrap;
   position: absolute;
@@ -118,20 +112,18 @@ h2.f4.text-normal.mb-3,
   border-top: 6px solid var(--border-color);
 }
 
-/* Kalender Graph */
 .calendar-graph {
   padding: 0;
   text-align: center;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .calendar {
     padding: 1rem;
     overflow-x: auto;
   }
 }
-/* Überschrift + Link über dem Kalender entfernen */
+
 .calendar > div > h2,
 .calendar > div > a,
 .calendar .contrib-number,

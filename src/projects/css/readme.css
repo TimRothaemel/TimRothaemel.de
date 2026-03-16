@@ -1,7 +1,3 @@
-/* ============================================================
-   README VIEWER
-   ============================================================ */
-
 .readme-container {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -14,7 +10,6 @@
     margin-top: 8rem;
 }
 
-/* Überschriften */
 .readme-container h1 {
   font-size: 1.75rem;
   font-weight: 700;
@@ -42,14 +37,12 @@
   margin-bottom: 0.5rem;
 }
 
-/* Fließtext */
 .readme-container p {
   color: var(--text-secondary);
   margin-bottom: 0.85rem;
   line-height: 1.75;
 }
 
-/* Links */
 .readme-container a {
   color: var(--accent-color);
   text-decoration: none;
@@ -61,7 +54,6 @@
   text-decoration: underline;
 }
 
-/* Inline-Code */
 .readme-container code {
   background-color: var(--bg-primary);
   color: var(--accent-color);
@@ -72,7 +64,6 @@
   border: 1px solid var(--border-color);
 }
 
-/* Code-Blöcke */
 .readme-container pre {
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
@@ -92,7 +83,6 @@
   line-height: 1.7;
 }
 
-/* Listen */
 .readme-container ul,
 .readme-container ol {
   padding-left: 1.5rem;
@@ -105,7 +95,6 @@
   line-height: 1.7;
 }
 
-/* Blockquote */
 .readme-container blockquote {
   border-left: 3px solid var(--accent-color);
   margin: 1rem 0;
@@ -116,14 +105,12 @@
   border-radius: 0 6px 6px 0;
 }
 
-/* Trennlinie */
 .readme-container hr {
   border: none;
   border-top: 1px solid var(--border-color);
   margin: 1.5rem 0;
 }
 
-/* Bilder */
 .readme-container img {
   max-width: 100%;
   border-radius: 8px;
@@ -131,7 +118,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Tabellen */
 .readme-container table {
   width: 100%;
   border-collapse: collapse;

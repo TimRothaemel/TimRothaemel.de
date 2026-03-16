@@ -1,4 +1,3 @@
-/* Projects Container */
 #projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -9,7 +8,6 @@
   margin-top: 2rem;
 }
 
-/* Project Card */
 .project-card {
   background-color: var(--bg-secondary);
   border-radius: 12px;
@@ -28,7 +26,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Project Image */
 .project-card > img {
   width: 100%;
   height: 220px;
@@ -36,7 +33,6 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Informations Container */
 .project-card .informations {
   padding: 1.5rem;
   display: flex;
@@ -45,7 +41,6 @@
   flex: 1;
 }
 
-/* Main Informations */
 .project-card .main-informations h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -60,7 +55,6 @@
   line-height: 1.6;
 }
 
-/* Project Links */
 .project-card .project-links {
   display: flex;
   justify-content: space-between;
@@ -110,7 +104,6 @@
   transform: scale(0.98);
 }
 
-/* More Informations */
 .project-card .more-informations {
   display: flex;
   flex-direction: column;
@@ -132,7 +125,6 @@
   min-width: fit-content;
 }
 
-/* Tech Badges */
 .project-card .tech-badges {
   display: flex;
   flex-direction: column;
@@ -178,7 +170,6 @@
   object-fit: contain;
 }
 
-/* Fallback: erster Buchstabe als farbiger Kreis */
 .project-card .tech-icon-fallback {
   width: 16px;
   height: 16px;
@@ -193,11 +184,10 @@
   flex-shrink: 0;
 }
 
-/* Darkmode Tech Badges */
 body.darkmode .project-card .tech-badge {
   background-color: var(--bg-secondary);
 }
-/* Loading State */
+
 #projects-container.loading {
   display: flex;
   justify-content: center;
@@ -211,7 +201,6 @@ body.darkmode .project-card .tech-badge {
   font-size: 1.1rem;
 }
 
-/* Empty State */
 #projects-container:empty::after {
   content: "No projects found";
   color: var(--text-secondary);
@@ -221,7 +210,6 @@ body.darkmode .project-card .tech-badge {
   font-size: 1.1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #projects-container {
     grid-template-columns: 1fr;

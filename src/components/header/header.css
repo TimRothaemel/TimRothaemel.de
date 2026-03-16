@@ -1,11 +1,10 @@
-/* ─── NAV BASE ─────────────────────────────────────────────── */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Links | Mitte | Rechts */
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 1.25rem 3rem;
   background: var(--bg-secondary);
@@ -16,7 +15,6 @@ nav {
   transition: all var(--transition-speed) ease;
 }
 
-/* ─── Language Switch — ganz links ─────────────────────────── */
 .language-switch {
   display: flex;
   gap: 0.25rem;
@@ -24,26 +22,23 @@ nav {
   padding: 0.4rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  justify-self: start; /* linksbündig in der ersten Spalte */
+  justify-self: start;
 }
 
-/* ─── Nav Links — mittig ────────────────────────────────────── */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  justify-self: center; /* zentriert in der mittleren Spalte */
+  justify-self: center;
 }
 
-/* ─── Controls — rechts ─────────────────────────────────────── */
 .nav-controls {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  justify-self: end; /* rechtsbündig in der dritten Spalte */
+  justify-self: end;
 }
 
-/* ─── NAV LINK Styles ───────────────────────────────────────── */
 .nav-link {
   padding: 0.4rem 0.85rem;
   color: var(--text-secondary);
@@ -64,10 +59,10 @@ nav {
   background: var(--bg-primary);
 }
 
-/* ─── Language + Theme Buttons ──────────────────────────────── */
 .menu-btn {
-  display: none; /* Nur auf Mobile sichtbar */
+  display: none;
 }
+
 .language-switch button,
 .menu-btn button {
   padding: 0.3rem 0.8rem;
@@ -81,7 +76,6 @@ nav {
   transition: all var(--transition-speed) ease;
 }
 
-/* keep active-btn styling after generic button rules so it isn't reset */
 .language-switch button.active-btn,
 .menu-btn button.active-btn,
 .nav-link.active,
@@ -96,17 +90,18 @@ nav {
   transform: translateY(-2px);
 }
 
-
 .language-switch button.active,
 .menu-btn button:hover,
 .menu-btn button.active {
   background: var(--accent-color);
   color: white;
 }
+
 .language-switch button:hover {
   background: var(--bg-secondary);
   transform: translateY(-2px);
 }
+
 .theme-switch {
   display: flex;
   gap: 0.25rem;
@@ -143,7 +138,6 @@ nav {
   transform: rotate(20deg);
 }
 
-/* ─── RESPONSIVE: Tablet (≤ 1024px) ────────────────────────── */
 @media (max-width: 1024px) {
   nav {
     padding: 1rem 2rem;
@@ -155,11 +149,10 @@ nav {
   }
 }
 
-/* ─── RESPONSIVE: Mobile (≤ 768px) ─────────────────────────── */
 @media (max-width: 799px) {
   nav {
     padding: 1rem 1.5rem;
-    grid-template-columns: auto 1fr auto; /* Burger | Leer | Controls */
+    grid-template-columns: auto 1fr auto;
   }
 
   .menu-btn {
@@ -167,7 +160,6 @@ nav {
     gap: 0.25rem;
   }
 
-  /* Language Switch im Overlay verstecken, gehört zu Controls */
   .language-switch {
     justify-self: unset;
   }
