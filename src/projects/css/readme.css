@@ -7,9 +7,11 @@
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
+  margin: 2rem 2rem 2rem 2rem;
   box-shadow: var(--shadow-sm);
   transition: background-color var(--transition-speed) ease,
               border-color var(--transition-speed) ease;
+    margin-top: 8rem;
 }
 
 /* Überschriften */
