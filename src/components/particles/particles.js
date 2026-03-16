@@ -1,53 +1,77 @@
-console.log("particles loaded");
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+let animationStarted = false;
+let flakes = [];
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+function initParticles() {
+  if (animationStarted) return;
 
-const flakes = [];
-const FLAKES = 120;
+  const canvas = document.getElementById("bg");
+  if (!canvas) return;
 
-for (let i = 0; i < FLAKES; i++) {
-  flakes.push({
-    x: Math.random() * canvas.width,  // Start at random x position
-    y: Math.random() * canvas.height, // Start at random y position
-    r: Math.random() * 2 + 1, // Radius between 1 and 3
-    speed: Math.random() * 1 + 0.3,
-  });
-}
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
 
-export function draw() {
-    ctx.fillStyle = "red";
-ctx.fillRect(10,10,50,50);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const dpr = window.devicePixelRatio || 1;// Handle high-DPI screens
 
-
-
-  let currentLang = localStorage.getItem("theme") || "dark";
-  if (currentLang === "dark") {
-    ctx.fillStyle = "#f8f9fa"; // Light color for dark mode
-  } else {
-    ctx.fillStyle = "#485470"; // Dark color for light mode
+  function resize() {// Adjust canvas size for high-DPI screens
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
+  resize();
+  window.addEventListener("resize", resize);
 
-  for (let f of flakes) {
-    ctx.beginPath();
-    ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-    ctx.fill();
+  const FLAKES = 120;
+  flakes = [];
 
-    f.y += f.speed;
-    if (f.y > canvas.height) {
-      f.y = -5;
-      f.x = Math.random() * canvas.width;
+  for (let i = 0; i < FLAKES; i++) {
+    flakes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      speed: Math.random() * 1 + 0.3,
+    });
+  }
+
+  function getParticleColor() {
+    const value = getComputedStyle(document.body).getPropertyValue("--text-secondary");
+    return value ? value.trim() : "#485470";
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = getParticleColor();
+
+    for (let f of flakes) {
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fill();
+
+      f.y += f.speed;
+      if (f.y > canvas.height) {
+        f.y = -5;
+        f.x = Math.random() * canvas.width;
+      }
     }
+
+    requestAnimationFrame(drawFrame);
   }
 
-  requestAnimationFrame(draw);
+  animationStarted = true;
+  drawFrame();
+}
+
+// Ensure the canvas exists before starting animation (especially for module scripts in <head>)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initParticles);
+} else {
+  initParticles();
+}
+
+// Exported for compatibility with existing imports.
+export function draw() {
+  initParticles();
 }
 
