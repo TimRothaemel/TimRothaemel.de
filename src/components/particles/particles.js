@@ -1,10 +1,3 @@
-/*
- * Particle background animation.
- *
- * Safari/iOS can block localStorage (private mode), so the canvas must rely on
- * current CSS variables (via computed styles) to match theme changes.
- */
-
 let animationStarted = false;
 let flakes = [];
 
@@ -32,8 +25,6 @@ function initCanvas() {
 }
 
 function getThemeVar(name, fallback) {
-  // Prefer variables on <body> so darkmode overrides (body.darkmode) take effect.
-  // Fallback to :root if the variable is not set on body.
   const body = document.body;
   const root = document.documentElement;
 
