@@ -4,7 +4,7 @@ document.addEventListener("headerLoaded", function () {
 
 async function loadReadme() {
   try {
-    const res = await fetch('https://github.com/TimRothaemel/pokeronline/blob/main/README.md');
+    const res = await fetch('https://raw.githubusercontent.com/TimRothaemel/pokeronline/main/README.md');
     const md = await res.text();
     document.getElementById('readme-content').innerHTML = marked.parse(md);
   } catch (error) {
