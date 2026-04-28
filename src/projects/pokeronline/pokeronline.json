@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "title": {
+        "de": "poker online",
+        "en": "poker online"
+      },
+      "description": {
+        "de": "poker online ist eine Webseite zum spielen von Poker",
+        "en": "poker online is a website for playing poker"
+      },
+      "image": "/src/projects/pokeronline/img/main.png",
+      "technologies": ["HTML", "CSS", "JavaScript", "TypeScript","Supabase", "Node.js"],
+      "role": {
+        "de": "Full-Stack Entwickler",
+        "en": "Full-Stack Developer"
+      },
+      "duration": {
+        "de": "28 April 2026 bis jetzt",
+        "en": "April 28, 2026 to now"
+      },
+      "users": "a few",
+      "status": {
+        "de": "online",
+        "en": "online"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/pokeronline",
+      "liveUrl": "https://pokertonline.netlify.app/",
+      "detailsUrl": "/src/projects/pokeronline/pokeronline.html"
+    }
+ ]
+}
