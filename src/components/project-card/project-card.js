@@ -40,7 +40,9 @@ const techIcons = {
   "HTML":        { dark: "/public/assets/svg/technologies/dark-html5.svg",        light: "/public/assets/svg/technologies/light-html5.svg" },
   "JavaScript":  { dark: "/public/assets/svg/technologies/dark-javascript.svg",  light: "/public/assets/svg/technologies/light-javascript.svg" },
   "CSS":         { dark: "/public/assets/svg/technologies/dark-css.svg",         light: "/public/assets/svg/technologies/light-css.svg" },
-  "Supabase":    { dark: "/public/assets/svg/platforms/dark-supabase.svg",    light: "/public/assets/svg/platforms/light-supabase.svg" }
+  "Supabase":    { dark: "/public/assets/svg/platforms/dark-supabase.svg",    light: "/public/assets/svg/platforms/light-supabase.svg" },
+  "Node.js":     { dark: "/public/assets/svg/technologies/dark-nodejs.svg",     light: "/public/assets/svg/technologies/light-nodejs.svg" },
+  "TypeScript":  { dark: "/public/assets/svg/technologies/dark-typescript.svg",  light: "/public/assets/svg/technologies/light-typescript.svg" }
 };
 
 // Render tech badges with dark/light icons
