@@ -1,5 +1,5 @@
 let currentLanguage = localStorage.getItem("lang") || "en";
-let projectsData = null;
+let projectsData = [];
 let translations = null;
 
 // Translations
@@ -55,16 +55,41 @@ function renderTechBadges(technologies) {
   }).join("");
 }
 
-// Load projects from JSON
+// Load all projects via index.json
 async function loadProjects() {
+  const container = document.getElementById("projects-container");
+
   try {
-    const response = await fetch("/src/projects/tuninghub/tuninghub.json");
-    const data = await response.json();
-    projectsData = data.projects;
+    // 1. Index laden
+    const indexResponse = await fetch("/src/projects/index.json");
+    if (!indexResponse.ok) throw new Error("index.json nicht gefunden");
+    const index = await indexResponse.json();
+
+    // 2. Alle Projekt-JSONs parallel laden
+    const results = await Promise.allSettled(
+      index.projects.map(path => fetch(path).then(r => {
+        if (!r.ok) throw new Error(`Fehler beim Laden: ${path}`);
+        return r.json();
+      }))
+    );
+
+    // 3. Erfolgreiche Ergebnisse sammeln, fehlgeschlagene loggen
+    projectsData = [];
+    results.forEach((result, i) => {
+      if (result.status === "fulfilled") {
+        const data = result.value;
+        // Unterstützt sowohl { projects: [...] } als auch direkt [...]
+        const entries = Array.isArray(data) ? data : data.projects ?? [];
+        projectsData.push(...entries);
+      } else {
+        console.warn(`Projekt ${index.projects[i]} konnte nicht geladen werden:`, result.reason);
+      }
+    });
+
     displayProjects(projectsData);
+
   } catch (error) {
-    console.error("Error loading projects:", error);
-    const container = document.getElementById("projects-container");
+    console.error("Fehler beim Laden der Projekte:", error);
     if (container) container.innerHTML = `<p>${t("loadError")}</p>`;
   }
 }
@@ -79,7 +104,7 @@ function displayProjects(projects) {
 
   container.innerHTML = "";
   projects.forEach((project) =>
-    container.appendChild(createProjectCard(project)),
+    container.appendChild(createProjectCard(project))
   );
 }
 
@@ -93,6 +118,7 @@ function createProjectCard(project) {
       window.location.href = `${project.detailsUrl}`;
     }
   });
+
   card.innerHTML = `
     <img src="${project.image}" alt="${project.title[currentLanguage]}">
     <div class="informations">
@@ -106,13 +132,13 @@ function createProjectCard(project) {
           <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">
           ${t("github")}
         </a>
-${project.liveUrl ? `
-  <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
-    ${t("liveDemo")}
-    <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
-    <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
-  </a>
-` : ''}
+        ${project.liveUrl ? `
+          <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
+            ${t("liveDemo")}
+            <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
+            <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
+          </a>
+        ` : ""}
       </div>
       <div class="more-informations">
         <div class="tech-badges">
