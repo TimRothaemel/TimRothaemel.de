@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="contactTitle"></title>
+    <title data-i18n="contact"></title>
     <link rel="stylesheet" href="/main.css" />
     <link rel="stylesheet" href="./contact.css" />
     <link rel="stylesheet" href="../../components/header/header.css" />
@@ -15,76 +15,102 @@
   <body>
     <header class="header"></header>
     <main>
-      <section class="contact-section">
-        <form id="contact-form">
-          <h2 data-i18n="contact_title"></h2>
-          <p data-i18n="contact_description"></p>
-          <input id="name" type="text" name="name" placeholder="Name" required />
-          <input id="email" type="email" name="email" placeholder="Email" required />
-          <textarea id="message" name="message" placeholder="Message" required></textarea>
-          <button type="submit" data-i18n="contact_submit"></button>
-        </form>
-        <div class="contact-options">
-          <a href="tel: +49 1525 9850350" target="_blank">
-            <img
-              src="/public/assets/svg/platforms/dark-phone.svg"
-              alt="phone"
-              class="contact-icon dark-icon"
+      <section class="contact-hero">
+        <div class="contact-intro">
+          <p class="contact-kicker" data-i18n="contact"></p>
+          <h1 data-i18n="contact_title"></h1>
+          <p class="contact-description" data-i18n="contact_description"></p>
+
+          <div class="contact-direct">
+            <a href="mailto:timrothaemel@outlook.de">
+              <span data-i18n="contact_email"></span>
+              <strong>timrothaemel@outlook.de</strong>
+            </a>
+            <a href="tel:+4915259850350">
+              <span data-i18n="contact_phone"></span>
+              <strong>+49 1525 9850350</strong>
+            </a>
+          </div>
+
+          <div class="contact-options" aria-label="Social links">
+            <a href="mailto:timrothaemel@outlook.de" aria-label="Email">
+              <img
+                src="/public/assets/svg/platforms/dark-envelope.svg"
+                alt=""
+                class="contact-icon dark-icon"
+              />
+              <img
+                src="/public/assets/svg/platforms/light-envelope.svg"
+                alt=""
+                class="contact-icon light-icon"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/timrothämel/" target="_blank" aria-label="LinkedIn">
+              <img
+                src="/public/assets/svg/platforms/dark-linkedIn.svg"
+                alt=""
+                class="contact-icon dark-icon"
+              />
+              <img
+                src="/public/assets/svg/platforms/light-linkedIn.svg"
+                alt=""
+                class="contact-icon light-icon"
+              />
+            </a>
+            <a href="https://github.com/TimRothaemel" target="_blank" aria-label="GitHub">
+              <img
+                src="/public/assets/svg/platforms/dark-github.svg"
+                alt=""
+                class="contact-icon dark-icon"
+              />
+              <img
+                src="/public/assets/svg/platforms/light-github.svg"
+                alt=""
+                class="contact-icon light-icon"
+              />
+            </a>
+            <a href="https://www.instagram.com/tim_rth09/" target="_blank" aria-label="Instagram">
+              <img
+                src="/public/assets/svg/platforms/dark-instagram.svg"
+                alt=""
+                class="contact-icon dark-icon"
+              />
+              <img
+                src="/public/assets/svg/platforms/light-instagram.svg"
+                alt=""
+                class="contact-icon light-icon"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <form id="contact-form">
+            <input
+              id="name"
+              type="text"
+              name="name"
+              data-i18n-placeholder="contact_name"
+              aria-label="Name"
+              required
             />
-            <img
-              src="/public/assets/svg/platforms/light-phone.svg"
-              alt="phone"
-              class="contact-icon light-icon"
+            <input
+              id="email"
+              type="email"
+              name="email"
+              data-i18n-placeholder="contact_email"
+              aria-label="Email"
+              required
             />
-          </a>
-          <a href="mailto:timrothaemel@outlook.de" target="_blank">
-            <img
-              src="/public/assets/svg/platforms/dark-envelope.svg"
-              alt="email"
-              class="contact-icon dark-icon"
-            />
-            <img
-              src="/public/assets/svg/platforms/light-envelope.svg"
-              alt="email"
-              class="contact-icon light-icon"
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/timrothämel/" target="_blank">
-            <img
-              src="/public/assets/svg/platforms/dark-linkedin.svg"
-              alt="LinkedIn"
-              class="contact-icon dark-icon"
-            />
-            <img
-              src="/public/assets/svg/platforms/light-linkedin.svg"
-              alt="LinkedIn"
-              class="contact-icon light-icon"
-            />
-          </a>
-          <a href="https://github.com/TimRothaemel" target="_blank">
-            <img
-              src="/public/assets/svg/platforms/dark-github.svg"
-              alt="GitHub"
-              class="contact-icon dark-icon"
-            />
-            <img
-              src="/public/assets/svg/platforms/light-github.svg"
-              alt="GitHub"
-              class="contact-icon light-icon"
-            />
-          </a>
-          <a href="https://www.instagram.com/tim_rth09/" target="_blank">
-            <img
-              src="/public/assets/svg/platforms/dark-instagram.svg"
-              alt="Instagram"
-              class="contact-icon dark-icon"
-            />
-            <img
-              src="/public/assets/svg/platforms/light-instagram.svg"
-              alt="Instagram"
-              class="contact-icon light-icon"
-            />
-          </a>
+            <textarea
+              id="message"
+              name="message"
+              data-i18n-placeholder="contact_message"
+              aria-label="Message"
+              required
+            ></textarea>
+            <button type="submit" data-i18n="contact_submit"></button>
+          </form>
         </div>
       </section>
     </main>

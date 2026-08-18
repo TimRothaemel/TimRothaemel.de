@@ -1,7 +1,7 @@
 console.log("write-animation.js loaded");
 
 // Array mit Wörtern, die animiert werden sollen
-const words = ["JavaScript", "CSS", "HTML", "Supabase", "React"];
+const words = ["AI Automations", "Websites", "SaaS Platforms" ];
 
 let currentWordIndex = 0;
 let currentCharIndex = 0;

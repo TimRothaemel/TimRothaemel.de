@@ -1,7 +1,21 @@
 document.addEventListener("headerLoaded", function () {
   document.getElementById("contact-btn")?.classList.add("active-btn");
+  updateContactPlaceholders(localStorage.getItem("lang") || "en");
 });
 
+document.addEventListener("changeLanguage", function (event) {
+  updateContactPlaceholders(event.detail.lang);
+});
+
+async function updateContactPlaceholders(lang) {
+  const res = await fetch(`/lang/${lang}.json`);
+  const data = await res.json();
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.dataset.i18nPlaceholder;
+    el.placeholder = data[key] || "";
+  });
+}
 
 const form = document.getElementById("contact-form");
 

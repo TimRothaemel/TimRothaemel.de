@@ -16,18 +16,42 @@
   <body>
     <header class="header"></header>
     <main>
-      <section class="about-me">
-        <div class="profile picture">
-          <img
-            src="/public/assets/img/me/me-withoutbg.png"
-            alt="Profile Picture"
-          />
-        </div>
-        <div class="informations">
-          <p data-i18n="about-me-description"></p>
-          <p data-i18n="about-me-age"></p>
-          <p data-i18n="about-me-location"></p>
-          <p data-i18n="about-me-email"></p>
+      <section class="about-hero">
+        <aside class="about-portrait" aria-label="Profile">
+          <figure>
+            <img
+              src="/public/assets/img/me/me-withoutbg.png"
+              alt="Tim Rothämel"
+            />
+            <figcaption>
+              <span>Tim Rothämel</span>
+              <span data-i18n="about-me-role"></span>
+            </figcaption>
+          </figure>
+        </aside>
+
+        <div class="about-content">
+          <p class="about-kicker" data-i18n="about"></p>
+          <h1 data-i18n="about-me-title"></h1>
+
+          <div class="about-meta" aria-label="Profile facts">
+            <p data-i18n="about-me-age"></p>
+            <p data-i18n="about-me-location"></p>
+            <p data-i18n="about-me-focus"></p>
+          </div>
+
+          <div class="about-copy">
+            <p data-i18n="about-me-intro-1"></p>
+            <p data-i18n="about-me-intro-2"></p>
+            <p data-i18n="about-me-intro-3"></p>
+            <p data-i18n="about-me-intro-4"></p>
+          </div>
+
+          <a
+            class="about-contact-link"
+            href="/src/pages/contact/contact.html"
+            data-i18n="about-me-contact"
+          ></a>
         </div>
       </section>
     </main>

@@ -29,11 +29,13 @@
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-speed) ease,
-              box-shadow var(--transition-speed) ease;
+              box-shadow var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
   cursor: default;
   display: flex;
   flex-direction: column;
   animation: fadeInUp 0.5s ease forwards;
+  border: 1px solid transparent;
 }
 
 .skill-card:nth-child(1) { animation-delay: 0.05s; }
@@ -87,8 +89,82 @@
   color: var(--text-primary);
 }
 
+.skill-card ul li.has-link {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.used-in-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.68rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.used-in-link:hover {
+  text-decoration: underline;
+}
+
+.used-in-link::after {
+  content: "\2192";
+}
+
 body.darkmode .skill-card ul li {
   background-color: var(--bg-secondary);
+}
+
+.certificates-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 3.5rem 0 1.5rem;
+}
+
+#certificates-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 220px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.75rem 1.1rem;
+  text-decoration: none;
+  transition: border-color var(--transition-speed) ease,
+              transform var(--transition-speed) ease;
+}
+
+a.certificate-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.certificate-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.certificate-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {

@@ -3,64 +3,68 @@
     "title": "JavaScript",
     "category": "Core Stack",
     "details": [
-      "DOM Manipulation",
-      "Async/Await",
-      "Fetch API",
-      "ES6+ Features",
-      "Event Handling",
-      "Modular Code Structure"
+      { "label": "DOM Manipulation" },
+      { "label": "Async/Await" },
+      { "label": "Fetch API" },
+      { "label": "ES6+ Features" },
+      { "label": "Event Handling" },
+      { "label": "Modular Code Structure" }
     ]
   },
   {
     "title": "HTML",
     "category": "Core Stack",
     "details": [
-      "Semantic Elements",
-      "Forms and Validation",
-      "Media Embedding",
-      "Accessibility Best Practices"
+      { "label": "Semantic Elements" },
+      { "label": "Forms and Validation" },
+      { "label": "Media Embedding" },
+      { "label": "Accessibility Best Practices" }
     ]
   },
   {
     "title": "CSS",
     "category": "Core Stack",
     "details": [
-      "Flexbox and Grid Layouts",
-      "Responsive Design",
-      "CSS Variables",
-      "Animations and Transitions"
+      { "label": "Flexbox and Grid Layouts" },
+      { "label": "Responsive Design" },
+      { "label": "CSS Variables" },
+      { "label": "Animations and Transitions" }
     ]
   },
   {
     "title": "Supabase",
     "category": "Core Stack",
+    "featured": true,
     "details": [
-      "Authentication",
-      "PostgreSQL Queries",
-      "Realtime Features",
-      "File Storage"
+      { "label": "Authentication", "usedIn": { "text": "Notely", "url": "https://notely-landingpage.netlify.app/" } },
+      { "label": "PostgreSQL Queries" },
+      { "label": "Realtime Features", "usedIn": { "text": "Notely", "url": "https://notely-landingpage.netlify.app/" } },
+      { "label": "File Storage" }
     ]
-  },{
+  },
+  {
     "title": "Docker",
     "category": "Core Stack",
     "details": [
-      "Containerization",
-      "Docker Compose",
-      "Image Optimization"
+      { "label": "Containerization" },
+      { "label": "Docker Compose" },
+      { "label": "Image Optimization" }
     ]
-  },{
+  },
+  {
     "title": "Git",
     "category": "Core Stack",
     "details": [
-      "Version Control",
-      "Branching and Merging",
-      "Collaboration"
+      { "label": "Version Control" },
+      { "label": "Branching and Merging" },
+      { "label": "Collaboration" }
     ]
-  },{
+  },
+  {
     "title": "Node.js",
     "category": "Core Stack",
     "details": [
-      "File Storage"
+      { "label": "File Storage" }
     ]
   }
 ]
