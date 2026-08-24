@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 4,
+      "title": {
+        "de": "Notely Landingpage",
+        "en": "Notely Landingpage"
+      },
+      "description": {
+        "de": "Landingpage für das Notely-Projekt mit Fokus auf Produktpräsentation und Conversion.",
+        "en": "Landing page for the Notely project with a strong focus on product presentation and conversion."
+      },
+      "image": "/src/projects/notely-landingpage/img/notely-landingpage.png",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "role": {
+        "de": "Frontend-Entwickler",
+        "en": "Frontend Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/notely-Landingpage",
+      "liveUrl": "https://notely-landingpage.netlify.app/",
+      "detailsUrl": "https://github.com/TimRothaemel/notely-Landingpage"
+    }
+  ]
+}

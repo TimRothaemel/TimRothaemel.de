@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 6,
+      "title": {
+        "de": "TimRothaemel",
+        "en": "TimRothaemel"
+      },
+      "description": {
+        "de": "GitHub-Profilprojekt mit persönlicher Projekt-, Portfolio- und Profil-Übersicht.",
+        "en": "GitHub profile project centered on personal project, portfolio, and profile overview."
+      },
+      "image": "https://opengraph.githubassets.com/1/TimRothaemel/TimRothaemel",
+      "technologies": ["GitHub", "HTML", "CSS"],
+      "role": {
+        "de": "Entwickler",
+        "en": "Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/TimRothaemel",
+      "liveUrl": "",
+      "detailsUrl": "https://github.com/TimRothaemel/TimRothaemel"
+    }
+  ]
+}

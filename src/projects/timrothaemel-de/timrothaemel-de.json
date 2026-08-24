@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 7,
+      "title": {
+        "de": "TimRothaemel.de",
+        "en": "TimRothaemel.de"
+      },
+      "description": {
+        "de": "Persönliche Website und Landingpage für Nutzer und Auftraggeber mit Informationen über mich und meine Projekte.",
+        "en": "Personal website and landing page for users and clients with information about my work and projects."
+      },
+      "image": "/src/projects/timrothaemel-de/img/timrothaemel-de.png",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "role": {
+        "de": "Full-Stack Entwickler",
+        "en": "Full-Stack Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/TimRothaemel.de",
+      "liveUrl": "https://timrothaemel.netlify.app/",
+      "detailsUrl": "https://github.com/TimRothaemel/TimRothaemel.de"
+    }
+  ]
+}

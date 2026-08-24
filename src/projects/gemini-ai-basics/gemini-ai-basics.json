@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 3,
+      "title": {
+        "de": "Gemini AI Basics",
+        "en": "Gemini AI Basics"
+      },
+      "description": {
+        "de": "Ein Einstieg in Gemini und KI-gestützte Workflows für schnelle Prototypen und Projekte.",
+        "en": "A beginner-focused project for exploring Gemini and AI-assisted workflows for quick prototypes and projects."
+      },
+      "image": "https://opengraph.githubassets.com/1/TimRothaemel/Gemini-AI-Basics",
+      "technologies": ["JavaScript", "HTML", "CSS"],
+      "role": {
+        "de": "Entwickler",
+        "en": "Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/Gemini-AI-Basics",
+      "liveUrl": "",
+      "detailsUrl": "https://github.com/TimRothaemel/Gemini-AI-Basics"
+    }
+  ]
+}

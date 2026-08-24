@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 5,
+      "title": {
+        "de": "Stripe Integration Demo",
+        "en": "Stripe Integration Demo"
+      },
+      "description": {
+        "de": "Demo-Projekt für die Integration von Stripe-Zahlungslösungen in eine moderne Webanwendung.",
+        "en": "Demo project for integrating Stripe payment flows into a modern web application."
+      },
+      "image": "https://opengraph.githubassets.com/1/TimRothaemel/stripe-integration-demo",
+      "technologies": ["JavaScript", "HTML", "CSS"],
+      "role": {
+        "de": "Full-Stack Entwickler",
+        "en": "Full-Stack Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/stripe-integration-demo",
+      "liveUrl": "",
+      "detailsUrl": "https://github.com/TimRothaemel/stripe-integration-demo"
+    }
+  ]
+}

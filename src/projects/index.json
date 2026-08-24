@@ -1,6 +1,12 @@
 {
   "projects": [
     "/src/projects/tuninghub/tuninghub.json",
-    "/src/projects/pokeronline/pokeronline.json"
+    "/src/projects/pokeronline/pokeronline.json",
+    "/src/projects/gemini-ai-basics/gemini-ai-basics.json",
+    "/src/projects/notely-landingpage/notely-landingpage.json",
+    "/src/projects/stripe-integration-demo/stripe-integration-demo.json",
+    "/src/projects/timrothaemel/timrothaemel.json",
+    "/src/projects/timrothaemel-de/timrothaemel-de.json",
+    "/src/projects/tuninghub-landingpage/tuninghub-landingpage.json"
   ]
 }

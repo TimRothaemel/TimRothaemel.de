@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 8,
+      "title": {
+        "de": "TuningHub Landingpage",
+        "en": "TuningHub Landingpage"
+      },
+      "description": {
+        "de": "Landingpage für TuningHub mit Fokus auf Branding, Präsentation und Nutzerakquise.",
+        "en": "Landing page for TuningHub focused on branding, presentation, and user acquisition."
+      },
+      "image": "/src/projects/tuninghub-landingpage/img/tuninghub-landingpage.png",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "role": {
+        "de": "Frontend-Entwickler",
+        "en": "Frontend Developer"
+      },
+      "duration": {
+        "de": "öffentliches Repository",
+        "en": "public repository"
+      },
+      "users": "Open source",
+      "status": {
+        "de": "öffentlich",
+        "en": "public"
+      },
+      "githubUrl": "https://github.com/TimRothaemel/tuninghub-landingpage",
+      "liveUrl": "https://tuninghub-landingpage.netlify.app/",
+      "detailsUrl": "https://github.com/TimRothaemel/tuninghub-landingpage"
+    }
+  ]
+}
