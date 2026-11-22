@@ -1,0 +1,24 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/timrothamel/dev/Tim Rothaemel.de/TimRothaemel.de/TimRothaemel.de/.npmrc
+5 silly config load:file:/Users/timrothamel/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm run build
+8 verbose argv "run" "build"
+9 verbose logfile logs-max:10 dir:/Users/timrothamel/dev/Tim Rothaemel.de/TimRothaemel.de/TimRothaemel.de/.npm-cache/_logs/2026-11-22T19_50_38_555Z-
+10 verbose logfile /Users/timrothamel/dev/Tim Rothaemel.de/TimRothaemel.de/TimRothaemel.de/.npm-cache/_logs/2026-11-22T19_50_38_555Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/npm 390ms
+13 verbose cwd /Users/timrothamel/dev/Tim Rothaemel.de/TimRothaemel.de/TimRothaemel.de
+14 verbose os Darwin 25.6.0
+15 verbose node v24.16.0
+16 verbose npm  v11.13.0
+17 notice
+17 notice New [31mmajor[39m version of npm available! [31m11.13.0[39m -> [34m12.2.3[39m
+17 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v12.2.3[39m
+17 notice To update run: [4mnpm install -g npm@12.2.3[24m
+17 notice  { force: true, Symbol(proc-log.meta): true }
+18 verbose exit 0
+19 info ok
