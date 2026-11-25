@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timrothaemel.netlify.app/sitemap.xml

@@ -37,12 +37,12 @@ function t(key) {
 
 // Icon mapping für Technologien (dark + light)
 const techIcons = {
-  "HTML":        { dark: "/public/assets/svg/technologies/dark-html5.svg",        light: "/public/assets/svg/technologies/light-html5.svg" },
-  "JavaScript":  { dark: "/public/assets/svg/technologies/dark-javascript.svg",  light: "/public/assets/svg/technologies/light-javascript.svg" },
-  "CSS":         { dark: "/public/assets/svg/technologies/dark-css.svg",         light: "/public/assets/svg/technologies/light-css.svg" },
-  "Supabase":    { dark: "/public/assets/svg/platforms/dark-supabase.svg",    light: "/public/assets/svg/platforms/light-supabase.svg" },
-  "Node.js":     { dark: "/public/assets/svg/technologies/dark-nodejs.svg",     light: "/public/assets/svg/technologies/light-nodejs.svg" },
-  "TypeScript":  { dark: "/public/assets/svg/technologies/dark-typescript.svg",  light: "/public/assets/svg/technologies/light-typescript.svg" }
+  "HTML":        { dark: "/assets/svg/technologies/dark-html5.svg",        light: "/assets/svg/technologies/light-html5.svg" },
+  "JavaScript":  { dark: "/assets/svg/technologies/dark-javascript.svg",  light: "/assets/svg/technologies/light-javascript.svg" },
+  "CSS":         { dark: "/assets/svg/technologies/dark-css.svg",         light: "/assets/svg/technologies/light-css.svg" },
+  "Supabase":    { dark: "/assets/svg/platforms/dark-supabase.svg",    light: "/assets/svg/platforms/light-supabase.svg" },
+  "Node.js":     { dark: "/assets/svg/technologies/dark-nodejs.svg",     light: "/assets/svg/technologies/light-nodejs.svg" },
+  "TypeScript":  { dark: "/assets/svg/technologies/dark-typescript.svg",  light: "/assets/svg/technologies/light-typescript.svg" }
 };
 
 // Render tech badges with dark/light icons
@@ -111,7 +111,7 @@ function displayProjects(projects) {
 }
 
 // Build a single project card
-function createProjectCard(project) {
+export function createProjectCard(project) {
   const card = document.createElement("div");
   card.className = "project-card";
 
@@ -130,15 +130,15 @@ function createProjectCard(project) {
       </div>
       <div class="project-links">
         <a href="${project.githubUrl}" class="github-link" target="_blank" onclick="event.stopPropagation()">
-          <img src="/public/assets/svg/platforms/dark-github.svg" alt="GitHub" class="dark-icon">
-          <img src="/public/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">
+          <img src="/assets/svg/platforms/dark-github.svg" alt="GitHub" class="dark-icon">
+          <img src="/assets/svg/platforms/light-github.svg" alt="GitHub" class="light-icon">
           ${t("github")}
         </a>
         ${project.liveUrl ? `
           <a href="${project.liveUrl}" class="live-demo-link" target="_blank" onclick="event.stopPropagation()">
             ${t("liveDemo")}
-            <img src="/public/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
-            <img src="/public/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
+            <img src="/assets/svg/dark-open-in-new.svg" alt="Live Demo" class="dark-icon">
+            <img src="/assets/svg/light-open-in-new.svg" alt="Live Demo" class="light-icon">
           </a>
         ` : ""}
       </div>

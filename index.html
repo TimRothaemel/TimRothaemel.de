@@ -2,18 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Portfolio website of Tim Rothämel, showcasing projects and skills in web development."
-    />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, Web Development, Tim Rothämel, Portfolio, Developer, Programmer, Software Engineer, Projects"
+      content="Portfolio of Tim Rothämel, a student and web developer from Germany. Explore web projects, technical skills and ways to get in touch."
     />
     <meta name="author" content="Tim Rothämel" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Rothämel</title>
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <title>Tim Rothämel – Web Developer Portfolio</title>
+    <link rel="canonical" href="https://timrothaemel.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tim Rothämel" />
+    <meta property="og:title" content="Tim Rothämel – Web Developer Portfolio" />
+    <meta property="og:description" content="Web projects, skills and background of Tim Rothämel, a student and web developer from Germany." />
+    <meta property="og:url" content="https://timrothaemel.netlify.app/" />
+    <meta property="og:image" content="https://timrothaemel.netlify.app/assets/img/me/me.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tim Rothämel – Web Developer Portfolio" />
+    <meta name="twitter:description" content="Web projects, skills and background of Tim Rothämel, a student and web developer from Germany." />
+    <meta name="twitter:image" content="https://timrothaemel.netlify.app/assets/img/me/me.webp" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://timrothaemel.netlify.app/#website",
+            "url": "https://timrothaemel.netlify.app/",
+            "name": "Tim Rothämel",
+            "inLanguage": ["en", "de"],
+            "publisher": { "@id": "https://timrothaemel.netlify.app/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://timrothaemel.netlify.app/#person",
+            "name": "Tim Rothämel",
+            "url": "https://timrothaemel.netlify.app/",
+            "image": "https://timrothaemel.netlify.app/assets/img/me/me.webp",
+            "jobTitle": "Student and web developer",
+            "address": { "@type": "PostalAddress", "addressLocality": "Breitenworbis", "addressCountry": "DE" },
+            "sameAs": [
+              "https://github.com/TimRothaemel",
+              "https://www.linkedin.com/in/timroth%C3%A4mel/",
+              "https://www.instagram.com/tim_rth09/"
+            ],
+            "knowsAbout": ["Web development", "JavaScript", "HTML", "CSS", "Web applications", "Artificial intelligence"]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://timrothaemel.netlify.app/#webpage",
+            "url": "https://timrothaemel.netlify.app/",
+            "name": "Tim Rothämel – Web Developer Portfolio",
+            "isPartOf": { "@id": "https://timrothaemel.netlify.app/#website" },
+            "about": { "@id": "https://timrothaemel.netlify.app/#person" },
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
 
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="src/components/header/header.css" />
@@ -35,8 +81,8 @@
     <canvas id="bg"></canvas>
     <main>
       <div class="myinfo">
-        <h1 data-i18n="hero_title"></h1>
-        <p data-i18n="hero_sub"></p>
+        <h1 data-i18n="hero_title">Hi, I'm Tim</h1>
+        <p data-i18n="hero_sub">Aspiring software developer focused on web development and AI.</p>
         <div class="animation-wrapper">
           <div id="animation-container"></div>
           <span class="cursor">|</span>

@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="about"></title>
+    <meta name="description" content="Learn about Tim Rothämel, a student and web developer from Breitenworbis, Germany, and his approach to building useful web applications." />
+    <meta name="robots" content="index,follow" />
+    <title>About Tim Rothämel – Web Developer</title>
+    <link rel="canonical" href="https://timrothaemel.netlify.app/src/pages/about-me/about-me.html" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="About Tim Rothämel – Web Developer" />
+    <meta property="og:description" content="Background, interests and current work of Tim Rothämel, a student and web developer from Germany." />
+    <meta property="og:url" content="https://timrothaemel.netlify.app/src/pages/about-me/about-me.html" />
+    <meta property="og:image" content="https://timrothaemel.netlify.app/assets/img/me/me.webp" />
 
     <link rel="stylesheet" href="/main.css" />
     <link rel="stylesheet" href="../../components/header/header.css" />
     <link rel="stylesheet" href="./about-me.css" />
 
-    <script src="./about-me.js"></script>
-    <script src="../../components/header/header-loader.js"></script>
+    <script type="module" src="./about-me.js"></script>
+    <script type="module" src="../../components/header/header-loader.js"></script>
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
@@ -20,7 +28,7 @@
         <aside class="about-portrait" aria-label="Profile">
           <figure>
             <img
-              src="/public/assets/img/me/me-withoutbg.png"
+              src="/assets/img/me/me-withoutbg.webp"
               alt="Tim Rothämel"
             />
             <figcaption>
@@ -32,7 +40,7 @@
 
         <div class="about-content">
           <p class="about-kicker" data-i18n="about"></p>
-          <h1 data-i18n="about-me-title"></h1>
+          <h1 data-i18n="about-me-title">About Me</h1>
 
           <div class="about-meta" aria-label="Profile facts">
             <p data-i18n="about-me-age"></p>
